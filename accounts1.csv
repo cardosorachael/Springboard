@@ -1,0 +1,22 @@
+accountnum,customerid,type,balance,status
+f5cae8d1-f277-4ec7-a4f1-956bce44032b,1, Chacking,100,CLOSED
+b1256d8c-458d-4088-a553-bf4c6cd34d5d,2, Savings,2999780,OPEN
+e5cae8d1-f277-4ec7-a4f1-956bce44032b,3, savings,300,CLOSED
+7ee6c0ce-8e38-4b85-9869-0070f632fd21,3, Savings,999,OPEN
+22208808-a076-4ffb-ac34-3071b60f5edd,2, Checking,765322,CLOSED
+3021e75c-e558-4327-8ac3-1110f80f77a3,3, savings,400,OPEN
+9c7bc20f-8043-47b0-b17e-d98598739d0a,3, Savings,800,CLOSED
+44c71f8e-0225-4559-8343-15342589c11c,2,Checkings,1009,OPEN
+d01e9e71-883a-4e3d-871f-64838db577e4,3, Savings,400,CLOSED
+9e9a668b-1a70-4608-b0cc-501bc941614c,1, Checkings,5000,OPEN
+b85df23c-e054-4254-955c-37e2027b56c3,2, Savings,0,OPEN
+b20bbbba-e8ac-4c79-875d-fe1efff530b1,4, Checking,5000,OPEN
+766d024d-4c73-419a-baeb-e991003c631a,8, Savings,2000,OPEN
+4b5a3295-4492-465c-895c-3ccffecfab41,10, Savings,10000,OPEN
+eb5374d5-33ad-4cab-8600-469696bc59e6,12, Checking,300,OPEN
+40148805-3a48-4ebb-85b2-cc12e4df27a5,13, Checking,500,OPEN
+3746a6d9-6ad1-49e8-897c-7bd55e307cea,14, Checking,200,OPEN
+46c5314e-626c-48c0-b08a-abb0d4a83421,15, Savings,300000,OPEN
+df7442e9-9c90-4cd8-8c7b-111a0c6261e8,17, Savings,100,OPEN
+1032a8c4-025f-4742-a5f1-ecd1d862b59e,2, Savings,300,  OPEN
+4ba9d071-2c91-4ebf-bfe8-57b7e68a9681, 21, Checkings, 1000, OPEN
