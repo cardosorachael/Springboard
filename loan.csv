@@ -1,4 +1,7 @@
-loannum,customerid,accountnum,loan_amt,loan_interest,loan_time,total_payment,monthly_payment,last_payment,next_payment
-33761,3, 7ee6c0ce-8e38-4b85-9869-0070f632fd21,2000,2,10,2200,200,06/05/2021,07/05/2021
-65972,2, b1256d8c-458d-4088-a553-bf4c6cd34d5d,1000,2,10,1200,100,,
-63457,3, 3021e75c-e558-4327-8ac3-1110f80f77a3,300,2,10,0,30,06/05/2021,07/05/2021
+loannum,customerid,accountnum,loan_amt,loan_interest,loan_time,total_payment,monthly_payment,last_payment,next_payment,status
+33761,3,7ee6c0ce-8e38-4b85-9869-0070f632fd21,2000,2,10,2200,200,6/5/2021,7/5/2021,PENDING
+65972,2,b1256d8c-458d-4088-a553-bf4c6cd34d5d,1000,2,10,1100,100,6/6/2021,7/6/2021,OPEN
+63457,3,3021e75c-e558-4327-8ac3-1110f80f77a3,300,2,10,0,30,6/5/2021,7/5/2021,PENDING
+73694,2,b1256d8c-458d-4088-a553-bf4c6cd34d5d,300,2,10,360,30,,,OPEN
+79888,4,b20bbbba-e8ac-4c79-875d-fe1efff530b1,600,2,10,720,60,,,OPEN
+82678,2,22208808-a076-4ffb-ac34-3071b60f5edd,20000,2,10,22000,2000,6/7/2021,7/7/2021,OPEN
