@@ -1,31 +1,25 @@
-import pandas as pd
+from OOP_miniproject.Lib.helper_functions import read_int, define_df, check_transfer_acct_creds, define_file
 
-file_accounts = 'accounts1.csv'
-df_a = pd.read_csv(file_accounts)
-
-#TODO handle differences between methods based on account type
-#TODO error handling
 
 class Account:
 
     def __init__(self, acct_num, customerid):
         self.acct_num = acct_num
         self.customer_id = customerid
-        self.balance = int(df_a.loc[df_a['accountnum'] == acct_num, 'balance'])
+        self.balance = self.get_balance()
 
     def deposit(self):
-        amount = float(input("Enter amount to be Deposited: "))
+        amount = read_int("Enter amount to be Deposited: ")
         self.balance += amount
-        df_a.loc[df_a.accountnum == self.acct_num, "balance"] = self.balance
-        df_a.to_csv(file_accounts,index=False)
+        self.update_balance()
         return('depoisted:{} current balance: {}'.format(amount, self.balance))
 
+
     def withdraw(self):
-        amount = float(input("Enter amount to be Withdrawn: "))
+        amount = read_int("Enter amount to be Withdrawn: ")
         if self.balance >= amount:
             self.balance -= amount
-            df_a.loc[df_a.accountnum == self.acct_num, "balance"] = self.balance
-            df_a.to_csv(file_accounts, index=False)
+            self.update_balance()
             return ('withdrew:{} current balance: {}'.format(amount, self.balance))
         else:
             print("\n Insufficient balance  ")
@@ -34,22 +28,36 @@ class Account:
         print("\n Net Available Balance=", self.balance)
 
     def transfer(self):
-        amount = int(input("How much would you like to transfer?"))
-        accounttotransfer = input('please select account to transfer')
-        custidtransfer = int(input('please select customer id to transfer'))
+        amount = read_int("How much would you like to transfer?")
+        accounttotransfer, custidtransfer = check_transfer_acct_creds()
         account2 = Account(acct_num=accounttotransfer, customerid=custidtransfer)
         if self.balance >= amount:
             self.balance = self.balance - amount
-            df_a.loc[df_a.accountnum == self.acct_num, "balance"] = self.balance
-            df_a.to_csv(file_accounts, index=False)
             account2.balance = account2.balance + amount
-            df_a.loc[df_a.accountnum == accounttotransfer, "balance"] = account2.balance
-            df_a.to_csv(file_accounts, index=False)
+
+            self.update_balance(transfer=True,acccounttotransfer=accounttotransfer, account2balance=account2.balance )
+            # df_a.loc[df_a.accountnum == accounttotransfer, "balance"] = account2.balance
+            # push_to_csv('account')
 
             print("\n You Transferred:", amount)
         else:
             print("\n Insufficient balance to transfer ")
 
+    def update_balance(self, transfer=False, acccounttotransfer=None, account2balance=None):
+        df = define_df('account')
+        if transfer==False:
+            df.loc[df.accountnum == self.acct_num, "balance"] = self.balance
+            df.to_csv(define_file('account'), index=False)
+
+        else:
+            df.loc[df.accountnum == self.acct_num, "balance"] = self.balance
+            df.loc[df.accountnum == acccounttotransfer, "balance"] = account2balance
+            df.to_csv(define_file('account'), index=False)
+
+
+    def get_balance(self):
+        df = define_df('account')
+        return int(df.loc[df['accountnum'] == self.acct_num, 'balance'])
 
 
 
