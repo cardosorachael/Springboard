@@ -4,9 +4,7 @@ from tabulate import tabulate
 
 path = r"C:\Users\cardo\PycharmProjects\SPRINGBOARD\CAPSTONE\Access_data\YELP"
 fname = r'\yelp_academic_dataset_business.json'
-fname2 = r'\new1.json'
 filename = path + fname
-filename2 = path + fname2
 #JSON TO CSV CONVERTER - useful for quick look at dataset, fields, to get an idea of how to clean/export data
 # data_file = open(filename)
 # data = []
