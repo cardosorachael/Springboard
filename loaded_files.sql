@@ -1,0 +1,1 @@
+CREATE SCHEMA euro_cup_2016;
