@@ -63,17 +63,20 @@ class TransformData:
                     b = Business(dataframe=dataframe)
                     df = b.remove_non_restaurants()
                     df = b.aggregate_hours_open(df=df)
+                    df = b.clean_attributes(df=df)
                     df.to_csv(self.output_path + r"\business_" + str(count) + '.csv', index=False)
                     count += 1
+                pass
 
             elif filename.endswith('user.json'):
                 count = 0
                 for dataframe in pd.read_json(self.unzip_folder_path + r'\/' + filename, lines=True, chunksize=1000):
                     u = User(dataframe=dataframe)
-                    df = u.yelping_since()
-                    df = u.is_elite(df=df)
+                    # df = u.yelping_since()
+                    df = u.is_elite()
                     df.to_csv(self.output_path + r"\user_" + str(count) + '.csv', index=False)
                     count += 1
+                pass
             elif filename.endswith('review.json'):
                 count = 0
                 for dataframe in pd.read_json(self.unzip_folder_path + r'\/' + filename, lines=True, chunksize=1000):
@@ -81,6 +84,7 @@ class TransformData:
                     df = r.transform_review_data()
                     df.to_csv(self.output_path + r"\review_" + str(count) + '.csv', index=False)
                     count += 1
+                pass
 
             elif filename.endswith('tip.json'):
                 count = 0
@@ -89,15 +93,19 @@ class TransformData:
                     df = t.transform_tip_data()
                     df.to_csv(self.output_path + r"\tip_" + str(count) + '.csv', index=False)
                     count += 1
+                pass
 
             elif filename.endswith('checkin.json'):
                 count = 0
+
                 for dataframe in pd.read_json(self.unzip_folder_path + r'\/' + filename, lines=True, chunksize=1000):
                     c = Checkin(dataframe=dataframe)
                     df = c.sum_num_of_checkins()
                     df = c.transform_business_id_col(df=df)
+                    df = c.change_column_name(df=df)
                     df.to_csv(self.output_path + r"\checkin_" + str(count) + '.csv', index=False)
                     count += 1
+                pass
 
             else:
                 logging.info('finished going through folder')

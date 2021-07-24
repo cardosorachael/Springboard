@@ -17,7 +17,6 @@ class Business:
         return(self.dataframe)
 
     def aggregate_hours_open(self, df):
-        #TODO debug why values not populating after 111th entry...
         """
         Iterates over each row in the loaded df and aggregates the number of days open into a new column 'days_open'
         :return: filtered dataframe
@@ -30,17 +29,21 @@ class Business:
             else:
                 continue
         df = df.drop(['hours'], axis=1)
-        self.dataframe = df
-        return(self.dataframe)
+        # self.dataframe = df
+        return(df)
 
 
     def clean_attributes(self,df):
-        #TODO figure out how to clean attributes
-        pass
+        for i, row in enumerate(df['attributes']):
+            if row:
+                try:
+                    print(row['RestaurantsPriceRange2'])
+                    df['attributes'][i] = row['RestaurantsPriceRange2']
+                except KeyError:
+                    df['attributes'][i] = 0
 
-    def clean_categories(self,df):
-        #TODO figure out how to handle comma separated categories
-        pass
+        df.rename(columns={'attributes': 'price_range'}, inplace=True)
+        return(df)
 
 
 class User:
@@ -50,19 +53,19 @@ class User:
     def __init__(self, dataframe):
         self.dataframe = dataframe
 
-    def yelping_since(self):
-        """
-        Replaces the yelping since column with just the year instead of the datetime for faster/more efficient querying
-        :return: filtered dataframe
-        """
-        return(self.dataframe)
 
-    def is_elite(self, df):
+    def is_elite(self):
         """
         Changes the value to is_elite column with BOOL True/False if the user ever held an elite status
         :return: filtered dataframe
         """
-        return(df)
+
+        for i, row in enumerate(self.dataframe['elite']):
+            if row:
+                self.dataframe['elite'][i] = True
+            else:
+                self.dataframe['elite'][i] = False
+        return(self.dataframe)
 
 
 
@@ -77,7 +80,6 @@ class Review:
         """
         Dummy function for later
         """
-        # TODO define data transformations for Tip
         return (self.dataframe)
 
 
@@ -92,7 +94,6 @@ class Tip:
         """
         Dummy function for later
         """
-        #TODO define data transformations for Tip
         return(self.dataframe)
 
 
@@ -112,6 +113,10 @@ class Checkin:
             row = row.split(",")
             self.dataframe['date'][i] = len(row)
         return(self.dataframe)
+
+    def change_column_name(self, df):
+        df.columns = ['business_id', 'no_of_checkins']
+        return(df)
 
     def transform_business_id_col(self, df):
         """
