@@ -1,0 +1,21 @@
+C:\Users\cardo\PycharmProjects\SPRINGBOARD\Spark_miniproject1>
+
+C:\Users\cardo\PycharmProjects\SPRINGBOARD\Spark_miniproject1>python testspark.py
+21/08/15 20:57:30 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+21/08/15 20:57:31 WARN Utils: Service 'SparkUI' could not bind on port 4040. Attempting port 4041.
+C:\Spark\spark-3.1.2-bin-hadoop3.2\python\lib\pyspark.zip\pyspark\shuffle.py:60: UserWarning: Please install psutil to have better support with spilling
+C:\Spark\spark-3.1.2-bin-hadoop3.2\python\lib\pyspark.zip\pyspark\shuffle.py:60: UserWarning: Please install psutil to have better support with spilling
+C:\Spark\spark-3.1.2-bin-hadoop3.2\python\lib\pyspark.zip\pyspark\shuffle.py:60: UserWarning: Please install psutil to have better support with spilling
+('Nissan-2003', 1)
+('Mercedes-2015', 2)
+('Mercedes-2016', 1)
+('Toyota-2017', 1)
+
+C:\Users\cardo\PycharmProjects\SPRINGBOARD\Spark_miniproject1>SUCCESS: The process with PID 8884 (child process of PID 25760) has been terminated.
+SUCCESS: The process with PID 25760 (child process of PID 9664) has been terminated.
+SUCCESS: The process with PID 9664 (child process of PID 8596) has been terminated.
+
+
