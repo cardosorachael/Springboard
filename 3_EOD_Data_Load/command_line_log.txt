@@ -1,0 +1,970 @@
+Microsoft Windows [Version 10.0.19041.1165]
+(c) Microsoft Corporation. All rights reserved.
+
+(venv) C:\Users\cardo\PycharmProjects\SPRINGBOARD>spark-submit C:\Users\cardo\PycharmProjects\SPRINGBOARD\Guided_Capstone\3_EOD_Data_Load\load_eod_data.py
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+21/09/13 06:46:55 INFO SparkContext: Running Spark version 3.1.2
+21/09/13 06:46:55 INFO ResourceUtils: ==============================================================
+21/09/13 06:46:55 INFO ResourceUtils: No custom resources configured for spark.driver.
+21/09/13 06:46:55 INFO ResourceUtils: ==============================================================
+21/09/13 06:46:55 INFO SparkContext: Submitted application: app
+21/09/13 06:46:55 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 1024, script: , vendor: , offHe
+ap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+21/09/13 06:46:55 INFO ResourceProfile: Limiting resource is cpu
+21/09/13 06:46:55 INFO ResourceProfileManager: Added ResourceProfile id: 0
+21/09/13 06:46:55 INFO SecurityManager: Changing view acls to: cardo
+21/09/13 06:46:55 INFO SecurityManager: Changing modify acls to: cardo
+21/09/13 06:46:55 INFO SecurityManager: Changing view acls groups to:
+21/09/13 06:46:55 INFO SecurityManager: Changing modify acls groups to:
+21/09/13 06:46:55 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(cardo); groups with view permissions: Set(); users  with modify permissions: Se
+t(cardo); groups with modify permissions: Set()
+21/09/13 06:46:56 INFO Utils: Successfully started service 'sparkDriver' on port 57296.
+21/09/13 06:46:56 INFO SparkEnv: Registering MapOutputTracker
+21/09/13 06:46:56 INFO SparkEnv: Registering BlockManagerMaster
+21/09/13 06:46:56 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+21/09/13 06:46:56 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+21/09/13 06:46:56 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+21/09/13 06:46:56 INFO DiskBlockManager: Created local directory at C:\Users\cardo\AppData\Local\Temp\blockmgr-a5a53957-9271-4a39-a57d-27808060e7f5
+21/09/13 06:46:56 INFO MemoryStore: MemoryStore started with capacity 366.3 MiB
+21/09/13 06:46:56 INFO SparkEnv: Registering OutputCommitCoordinator
+21/09/13 06:46:56 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+21/09/13 06:46:56 INFO SparkUI: Bound SparkUI to 0.0.0.0, and started at http://LAPTOP-TN9MOJSU.mshome.net:4040
+21/09/13 06:46:57 INFO Executor: Starting executor ID driver on host LAPTOP-TN9MOJSU.mshome.net
+21/09/13 06:46:57 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 57318.
+21/09/13 06:46:57 INFO NettyBlockTransferService: Server created on LAPTOP-TN9MOJSU.mshome.net:57318
+21/09/13 06:46:57 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+21/09/13 06:46:57 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, LAPTOP-TN9MOJSU.mshome.net, 57318, None)
+21/09/13 06:46:57 INFO BlockManagerMasterEndpoint: Registering block manager LAPTOP-TN9MOJSU.mshome.net:57318 with 366.3 MiB RAM, BlockManagerId(driver, LAPTOP-TN9MOJSU.mshome.net, 57318, None)
+21/09/13 06:46:57 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, LAPTOP-TN9MOJSU.mshome.net, 57318, None)
+21/09/13 06:46:57 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, LAPTOP-TN9MOJSU.mshome.net, 57318, None)
+21/09/13 06:46:57 INFO SharedState: Setting hive.metastore.warehouse.dir ('null') to the value of spark.sql.warehouse.dir ('file:/C:/Users/cardo/PycharmProjects/SPRINGBOARD/spark-warehouse').
+21/09/13 06:46:57 INFO SharedState: Warehouse path is 'file:/C:/Users/cardo/PycharmProjects/SPRINGBOARD/spark-warehouse'.
+21/09/13 06:46:59 INFO InMemoryFileIndex: It took 48 ms to list leaf files for 1 paths.
+21/09/13 06:46:59 INFO SparkContext: Starting job: parquet at <unknown>:0
+21/09/13 06:46:59 INFO DAGScheduler: Got job 0 (parquet at <unknown>:0) with 1 output partitions
+21/09/13 06:46:59 INFO DAGScheduler: Final stage: ResultStage 0 (parquet at <unknown>:0)
+21/09/13 06:46:59 INFO DAGScheduler: Parents of final stage: List()
+21/09/13 06:46:59 INFO DAGScheduler: Missing parents: List()
+21/09/13 06:46:59 INFO DAGScheduler: Submitting ResultStage 0 (MapPartitionsRDD[1] at parquet at <unknown>:0), which has no missing parents
+21/09/13 06:46:59 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 83.9 KiB, free 366.2 MiB)
+21/09/13 06:46:59 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 29.7 KiB, free 366.2 MiB)
+21/09/13 06:46:59 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on LAPTOP-TN9MOJSU.mshome.net:57318 (size: 29.7 KiB, free: 366.3 MiB)
+21/09/13 06:46:59 INFO SparkContext: Created broadcast 0 from broadcast at DAGScheduler.scala:1388
+21/09/13 06:46:59 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 0 (MapPartitionsRDD[1] at parquet at <unknown>:0) (first 15 tasks are for partitions Vector(0))
+21/09/13 06:46:59 INFO TaskSchedulerImpl: Adding task set 0.0 with 1 tasks resource profile 0
+21/09/13 06:46:59 INFO TaskSetManager: Starting task 0.0 in stage 0.0 (TID 0) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 0, PROCESS_LOCAL, 4715 bytes) taskResourceAssignments Map()
+21/09/13 06:46:59 INFO Executor: Running task 0.0 in stage 0.0 (TID 0)
+21/09/13 06:47:00 INFO Executor: Finished task 0.0 in stage 0.0 (TID 0). 2288 bytes result sent to driver
+21/09/13 06:47:00 INFO TaskSetManager: Finished task 0.0 in stage 0.0 (TID 0) in 643 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (1/1)
+21/09/13 06:47:00 INFO TaskSchedulerImpl: Removed TaskSet 0.0, whose tasks have all completed, from pool
+21/09/13 06:47:00 INFO DAGScheduler: ResultStage 0 (parquet at <unknown>:0) finished in 0.824 s
+21/09/13 06:47:00 INFO DAGScheduler: Job 0 is finished. Cancelling potential speculative or zombie tasks for this job
+21/09/13 06:47:00 INFO TaskSchedulerImpl: Killing all running tasks in stage 0: Stage finished
+21/09/13 06:47:00 INFO DAGScheduler: Job 0 finished: parquet at <unknown>:0, took 0.875622 s
+21/09/13 06:47:00 INFO BlockManagerInfo: Removed broadcast_0_piece0 on LAPTOP-TN9MOJSU.mshome.net:57318 in memory (size: 29.7 KiB, free: 366.3 MiB)
+21/09/13 06:47:02 INFO FileSourceStrategy: Pushed Filters:
+21/09/13 06:47:02 INFO FileSourceStrategy: Post-Scan Filters:
+21/09/13 06:47:02 INFO FileSourceStrategy: Output Data Schema: struct<trade_dt: date, symbol: string, event_tm: float, event_seq_nb: int, exchange: string ... 1 more field>
+21/09/13 06:47:03 INFO CodeGenerator: Code generated in 278.3663 ms
+21/09/13 06:47:03 INFO CodeGenerator: Code generated in 25.0986 ms
+21/09/13 06:47:03 INFO MemoryStore: Block broadcast_1 stored as values in memory (estimated size 309.0 KiB, free 366.0 MiB)
+21/09/13 06:47:03 INFO MemoryStore: Block broadcast_1_piece0 stored as bytes in memory (estimated size 28.3 KiB, free 366.0 MiB)
+21/09/13 06:47:03 INFO BlockManagerInfo: Added broadcast_1_piece0 in memory on LAPTOP-TN9MOJSU.mshome.net:57318 (size: 28.3 KiB, free: 366.3 MiB)
+21/09/13 06:47:03 INFO SparkContext: Created broadcast 1 from showString at <unknown>:0
+21/09/13 06:47:03 INFO FileSourceScanExec: Planning scan with bin packing, max size: 4197448 bytes, open cost is considered as scanning 4194304 bytes.
+21/09/13 06:47:03 INFO SparkContext: Starting job: showString at <unknown>:0
+21/09/13 06:47:03 INFO DAGScheduler: Registering RDD 6 (showString at <unknown>:0) as input to shuffle 0
+21/09/13 06:47:03 INFO DAGScheduler: Got job 1 (showString at <unknown>:0) with 1 output partitions
+21/09/13 06:47:03 INFO DAGScheduler: Final stage: ResultStage 2 (showString at <unknown>:0)
+21/09/13 06:47:03 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 1)
+21/09/13 06:47:03 INFO DAGScheduler: Missing parents: List(ShuffleMapStage 1)
+21/09/13 06:47:03 INFO DAGScheduler: Submitting ShuffleMapStage 1 (MapPartitionsRDD[6] at showString at <unknown>:0), which has no missing parents
+21/09/13 06:47:03 INFO MemoryStore: Block broadcast_2 stored as values in memory (estimated size 22.5 KiB, free 365.9 MiB)
+21/09/13 06:47:03 INFO MemoryStore: Block broadcast_2_piece0 stored as bytes in memory (estimated size 9.6 KiB, free 365.9 MiB)
+21/09/13 06:47:03 INFO BlockManagerInfo: Added broadcast_2_piece0 in memory on LAPTOP-TN9MOJSU.mshome.net:57318 (size: 9.6 KiB, free: 366.3 MiB)
+21/09/13 06:47:03 INFO SparkContext: Created broadcast 2 from broadcast at DAGScheduler.scala:1388
+21/09/13 06:47:03 INFO DAGScheduler: Submitting 1 missing tasks from ShuffleMapStage 1 (MapPartitionsRDD[6] at showString at <unknown>:0) (first 15 tasks are for partitions Vector(0))
+21/09/13 06:47:03 INFO TaskSchedulerImpl: Adding task set 1.0 with 1 tasks resource profile 0
+21/09/13 06:47:03 INFO TaskSetManager: Starting task 0.0 in stage 1.0 (TID 1) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 0, PROCESS_LOCAL, 4955 bytes) taskResourceAssignments Map()
+21/09/13 06:47:03 INFO Executor: Running task 0.0 in stage 1.0 (TID 1)
+21/09/13 06:47:03 INFO FileScanRDD: Reading File path: file:///C:/Users/cardo/PycharmProjects/SPRINGBOARD/output_dir/partition=T/part-00000-1f4e0024-0cff-4ddd-97cc-2a603fd1770b.c000.snappy.parquet, range: 0-3144,
+partition values: [empty row]
+21/09/13 06:47:03 INFO CodecPool: Got brand-new decompressor [.snappy]
+21/09/13 06:47:04 INFO CodeGenerator: Code generated in 7.7045 ms
+21/09/13 06:47:04 INFO CodeGenerator: Code generated in 15.3314 ms
+21/09/13 06:47:04 INFO CodeGenerator: Code generated in 13.4937 ms
+21/09/13 06:47:04 INFO CodeGenerator: Code generated in 17.4161 ms
+21/09/13 06:47:04 INFO CodeGenerator: Code generated in 8.2763 ms
+21/09/13 06:47:04 INFO Executor: Finished task 0.0 in stage 1.0 (TID 1). 2626 bytes result sent to driver
+21/09/13 06:47:04 INFO TaskSetManager: Finished task 0.0 in stage 1.0 (TID 1) in 802 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (1/1)
+21/09/13 06:47:04 INFO TaskSchedulerImpl: Removed TaskSet 1.0, whose tasks have all completed, from pool
+21/09/13 06:47:04 INFO DAGScheduler: ShuffleMapStage 1 (showString at <unknown>:0) finished in 0.868 s
+21/09/13 06:47:04 INFO DAGScheduler: looking for newly runnable stages
+21/09/13 06:47:04 INFO DAGScheduler: running: Set()
+21/09/13 06:47:04 INFO DAGScheduler: waiting: Set(ResultStage 2)
+21/09/13 06:47:04 INFO DAGScheduler: failed: Set()
+21/09/13 06:47:04 INFO DAGScheduler: Submitting ResultStage 2 (MapPartitionsRDD[10] at showString at <unknown>:0), which has no missing parents
+21/09/13 06:47:04 INFO MemoryStore: Block broadcast_3 stored as values in memory (estimated size 27.5 KiB, free 365.9 MiB)
+21/09/13 06:47:04 INFO MemoryStore: Block broadcast_3_piece0 stored as bytes in memory (estimated size 13.4 KiB, free 365.9 MiB)
+21/09/13 06:47:04 INFO BlockManagerInfo: Added broadcast_3_piece0 in memory on LAPTOP-TN9MOJSU.mshome.net:57318 (size: 13.4 KiB, free: 366.2 MiB)
+21/09/13 06:47:04 INFO SparkContext: Created broadcast 3 from broadcast at DAGScheduler.scala:1388
+21/09/13 06:47:04 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 2 (MapPartitionsRDD[10] at showString at <unknown>:0) (first 15 tasks are for partitions Vector(0))
+21/09/13 06:47:04 INFO TaskSchedulerImpl: Adding task set 2.0 with 1 tasks resource profile 0
+21/09/13 06:47:04 INFO TaskSetManager: Starting task 0.0 in stage 2.0 (TID 2) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 0, PROCESS_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/13 06:47:04 INFO Executor: Running task 0.0 in stage 2.0 (TID 2)
+21/09/13 06:47:04 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/13 06:47:04 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 5 ms
+21/09/13 06:47:04 INFO Executor: Finished task 0.0 in stage 2.0 (TID 2). 3285 bytes result sent to driver
+21/09/13 06:47:04 INFO TaskSetManager: Finished task 0.0 in stage 2.0 (TID 2) in 40 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (1/1)
+21/09/13 06:47:04 INFO TaskSchedulerImpl: Removed TaskSet 2.0, whose tasks have all completed, from pool
+21/09/13 06:47:04 INFO DAGScheduler: ResultStage 2 (showString at <unknown>:0) finished in 0.055 s
+21/09/13 06:47:04 INFO DAGScheduler: Job 1 is finished. Cancelling potential speculative or zombie tasks for this job
+21/09/13 06:47:04 INFO TaskSchedulerImpl: Killing all running tasks in stage 2: Stage finished
+21/09/13 06:47:04 INFO DAGScheduler: Job 1 finished: showString at <unknown>:0, took 0.945415 s
+21/09/13 06:47:04 INFO SparkContext: Starting job: showString at <unknown>:0
+21/09/13 06:47:04 INFO DAGScheduler: Got job 2 (showString at <unknown>:0) with 4 output partitions
+21/09/13 06:47:04 INFO DAGScheduler: Final stage: ResultStage 4 (showString at <unknown>:0)
+21/09/13 06:47:04 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 3)
+21/09/13 06:47:04 INFO DAGScheduler: Missing parents: List()
+21/09/13 06:47:04 INFO DAGScheduler: Submitting ResultStage 4 (MapPartitionsRDD[10] at showString at <unknown>:0), which has no missing parents
+21/09/13 06:47:04 INFO MemoryStore: Block broadcast_4 stored as values in memory (estimated size 27.5 KiB, free 365.9 MiB)
+21/09/13 06:47:04 INFO MemoryStore: Block broadcast_4_piece0 stored as bytes in memory (estimated size 13.4 KiB, free 365.9 MiB)
+21/09/13 06:47:04 INFO BlockManagerInfo: Added broadcast_4_piece0 in memory on LAPTOP-TN9MOJSU.mshome.net:57318 (size: 13.4 KiB, free: 366.2 MiB)
+21/09/13 06:47:04 INFO SparkContext: Created broadcast 4 from broadcast at DAGScheduler.scala:1388
+21/09/13 06:47:04 INFO DAGScheduler: Submitting 4 missing tasks from ResultStage 4 (MapPartitionsRDD[10] at showString at <unknown>:0) (first 15 tasks are for partitions Vector(1, 2, 3, 4))
+21/09/13 06:47:04 INFO TaskSchedulerImpl: Adding task set 4.0 with 4 tasks resource profile 0
+21/09/13 06:47:04 INFO TaskSetManager: Starting task 0.0 in stage 4.0 (TID 3) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 1, PROCESS_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/13 06:47:04 INFO Executor: Running task 0.0 in stage 4.0 (TID 3)
+21/09/13 06:47:04 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/13 06:47:04 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 1 ms
+21/09/13 06:47:04 INFO Executor: Finished task 0.0 in stage 4.0 (TID 3). 3242 bytes result sent to driver
+21/09/13 06:47:04 INFO TaskSetManager: Starting task 1.0 in stage 4.0 (TID 4) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 2, PROCESS_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/13 06:47:04 INFO Executor: Running task 1.0 in stage 4.0 (TID 4)
+21/09/13 06:47:04 INFO TaskSetManager: Finished task 0.0 in stage 4.0 (TID 3) in 15 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (1/4)
+21/09/13 06:47:04 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/13 06:47:04 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+21/09/13 06:47:04 INFO Executor: Finished task 1.0 in stage 4.0 (TID 4). 3199 bytes result sent to driver
+21/09/13 06:47:04 INFO TaskSetManager: Starting task 2.0 in stage 4.0 (TID 5) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 3, PROCESS_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/13 06:47:04 INFO Executor: Running task 2.0 in stage 4.0 (TID 5)
+21/09/13 06:47:04 INFO TaskSetManager: Finished task 1.0 in stage 4.0 (TID 4) in 15 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (2/4)
+21/09/13 06:47:04 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/13 06:47:04 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+21/09/13 06:47:04 INFO Executor: Finished task 2.0 in stage 4.0 (TID 5). 3199 bytes result sent to driver
+21/09/13 06:47:04 INFO TaskSetManager: Starting task 3.0 in stage 4.0 (TID 6) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 4, PROCESS_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/13 06:47:04 INFO Executor: Running task 3.0 in stage 4.0 (TID 6)
+21/09/13 06:47:04 INFO TaskSetManager: Finished task 2.0 in stage 4.0 (TID 5) in 12 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (3/4)
+21/09/13 06:47:04 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/13 06:47:04 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+21/09/13 06:47:04 INFO Executor: Finished task 3.0 in stage 4.0 (TID 6). 3199 bytes result sent to driver
+21/09/13 06:47:04 INFO TaskSetManager: Finished task 3.0 in stage 4.0 (TID 6) in 11 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (4/4)
+21/09/13 06:47:04 INFO TaskSchedulerImpl: Removed TaskSet 4.0, whose tasks have all completed, from pool
+21/09/13 06:47:04 INFO DAGScheduler: ResultStage 4 (showString at <unknown>:0) finished in 0.060 s
+21/09/13 06:47:04 INFO DAGScheduler: Job 2 is finished. Cancelling potential speculative or zombie tasks for this job
+21/09/13 06:47:04 INFO TaskSchedulerImpl: Killing all running tasks in stage 4: Stage finished
+21/09/13 06:47:04 INFO DAGScheduler: Job 2 finished: showString at <unknown>:0, took 0.066892 s
+21/09/13 06:47:04 INFO SparkContext: Starting job: showString at <unknown>:0
+21/09/13 06:47:04 INFO DAGScheduler: Got job 3 (showString at <unknown>:0) with 20 output partitions
+21/09/13 06:47:04 INFO DAGScheduler: Final stage: ResultStage 6 (showString at <unknown>:0)
+21/09/13 06:47:04 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 5)
+21/09/13 06:47:04 INFO DAGScheduler: Missing parents: List()
+21/09/13 06:47:04 INFO DAGScheduler: Submitting ResultStage 6 (MapPartitionsRDD[10] at showString at <unknown>:0), which has no missing parents
+21/09/13 06:47:04 INFO MemoryStore: Block broadcast_5 stored as values in memory (estimated size 27.5 KiB, free 365.8 MiB)
+21/09/13 06:47:04 INFO MemoryStore: Block broadcast_5_piece0 stored as bytes in memory (estimated size 13.4 KiB, free 365.8 MiB)
+21/09/13 06:47:04 INFO BlockManagerInfo: Added broadcast_5_piece0 in memory on LAPTOP-TN9MOJSU.mshome.net:57318 (size: 13.4 KiB, free: 366.2 MiB)
+21/09/13 06:47:04 INFO SparkContext: Created broadcast 5 from broadcast at DAGScheduler.scala:1388
+21/09/13 06:47:04 INFO DAGScheduler: Submitting 20 missing tasks from ResultStage 6 (MapPartitionsRDD[10] at showString at <unknown>:0) (first 15 tasks are for partitions Vector(5, 6, 7, 8, 9, 10, 11, 12, 13, 14,
+15, 16, 17, 18, 19))
+21/09/13 06:47:04 INFO TaskSchedulerImpl: Adding task set 6.0 with 20 tasks resource profile 0
+21/09/13 06:47:04 INFO TaskSetManager: Starting task 0.0 in stage 6.0 (TID 7) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 5, NODE_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/13 06:47:04 INFO Executor: Running task 0.0 in stage 6.0 (TID 7)
+21/09/13 06:47:04 INFO ShuffleBlockFetcherIterator: Getting 1 (142.0 B) non-empty blocks including 1 (142.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/13 06:47:04 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 3 ms
+21/09/13 06:47:04 INFO CodeGenerator: Code generated in 8.7691 ms
+21/09/13 06:47:04 INFO CodeGenerator: Code generated in 10.3244 ms
+21/09/13 06:47:04 INFO Executor: Finished task 0.0 in stage 6.0 (TID 7). 3371 bytes result sent to driver
+21/09/13 06:47:04 INFO TaskSetManager: Starting task 16.0 in stage 6.0 (TID 8) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 21, NODE_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/13 06:47:04 INFO Executor: Running task 16.0 in stage 6.0 (TID 8)
+21/09/13 06:47:04 INFO TaskSetManager: Finished task 0.0 in stage 6.0 (TID 7) in 64 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (1/20)
+21/09/13 06:47:04 INFO ShuffleBlockFetcherIterator: Getting 1 (142.0 B) non-empty blocks including 1 (142.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/13 06:47:04 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 1 ms
+21/09/13 06:47:04 INFO Executor: Finished task 16.0 in stage 6.0 (TID 8). 3366 bytes result sent to driver
+21/09/13 06:47:04 INFO TaskSetManager: Starting task 17.0 in stage 6.0 (TID 9) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 22, NODE_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/13 06:47:04 INFO Executor: Running task 17.0 in stage 6.0 (TID 9)
+21/09/13 06:47:04 INFO TaskSetManager: Finished task 16.0 in stage 6.0 (TID 8) in 25 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (2/20)
+21/09/13 06:47:04 INFO ShuffleBlockFetcherIterator: Getting 1 (142.0 B) non-empty blocks including 1 (142.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/13 06:47:04 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+21/09/13 06:47:04 INFO Executor: Finished task 17.0 in stage 6.0 (TID 9). 3410 bytes result sent to driver
+21/09/13 06:47:04 INFO TaskSetManager: Starting task 1.0 in stage 6.0 (TID 10) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 6, PROCESS_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/13 06:47:04 INFO Executor: Running task 1.0 in stage 6.0 (TID 10)
+21/09/13 06:47:04 INFO TaskSetManager: Finished task 17.0 in stage 6.0 (TID 9) in 27 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (3/20)
+21/09/13 06:47:04 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/13 06:47:04 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+21/09/13 06:47:04 INFO Executor: Finished task 1.0 in stage 6.0 (TID 10). 3199 bytes result sent to driver
+21/09/13 06:47:04 INFO TaskSetManager: Starting task 2.0 in stage 6.0 (TID 11) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 7, PROCESS_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/13 06:47:04 INFO Executor: Running task 2.0 in stage 6.0 (TID 11)
+21/09/13 06:47:04 INFO TaskSetManager: Finished task 1.0 in stage 6.0 (TID 10) in 8 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (4/20)
+21/09/13 06:47:04 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/13 06:47:04 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+21/09/13 06:47:04 INFO Executor: Finished task 2.0 in stage 6.0 (TID 11). 3199 bytes result sent to driver
+21/09/13 06:47:04 INFO TaskSetManager: Starting task 3.0 in stage 6.0 (TID 12) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 8, PROCESS_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/13 06:47:04 INFO Executor: Running task 3.0 in stage 6.0 (TID 12)
+21/09/13 06:47:04 INFO TaskSetManager: Finished task 2.0 in stage 6.0 (TID 11) in 9 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (5/20)
+21/09/13 06:47:04 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/13 06:47:04 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+21/09/13 06:47:04 INFO Executor: Finished task 3.0 in stage 6.0 (TID 12). 3199 bytes result sent to driver
+21/09/13 06:47:04 INFO TaskSetManager: Starting task 4.0 in stage 6.0 (TID 13) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 9, PROCESS_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/13 06:47:04 INFO Executor: Running task 4.0 in stage 6.0 (TID 13)
+21/09/13 06:47:04 INFO TaskSetManager: Finished task 3.0 in stage 6.0 (TID 12) in 7 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (6/20)
+21/09/13 06:47:04 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/13 06:47:04 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+21/09/13 06:47:04 INFO Executor: Finished task 4.0 in stage 6.0 (TID 13). 3242 bytes result sent to driver
+21/09/13 06:47:04 INFO TaskSetManager: Starting task 5.0 in stage 6.0 (TID 14) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 10, PROCESS_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/13 06:47:04 INFO Executor: Running task 5.0 in stage 6.0 (TID 14)
+21/09/13 06:47:04 INFO TaskSetManager: Finished task 4.0 in stage 6.0 (TID 13) in 17 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (7/20)
+21/09/13 06:47:04 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/13 06:47:04 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 8 ms
+21/09/13 06:47:04 INFO Executor: Finished task 5.0 in stage 6.0 (TID 14). 3199 bytes result sent to driver
+21/09/13 06:47:04 INFO TaskSetManager: Starting task 6.0 in stage 6.0 (TID 15) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 11, PROCESS_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/13 06:47:04 INFO Executor: Running task 6.0 in stage 6.0 (TID 15)
+21/09/13 06:47:04 INFO TaskSetManager: Finished task 5.0 in stage 6.0 (TID 14) in 18 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (8/20)
+21/09/13 06:47:04 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/13 06:47:04 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+21/09/13 06:47:04 INFO Executor: Finished task 6.0 in stage 6.0 (TID 15). 3199 bytes result sent to driver
+21/09/13 06:47:04 INFO TaskSetManager: Starting task 7.0 in stage 6.0 (TID 16) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 12, PROCESS_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/13 06:47:04 INFO TaskSetManager: Finished task 6.0 in stage 6.0 (TID 15) in 17 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (9/20)
+21/09/13 06:47:04 INFO Executor: Running task 7.0 in stage 6.0 (TID 16)
+21/09/13 06:47:04 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/13 06:47:04 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+21/09/13 06:47:04 INFO Executor: Finished task 7.0 in stage 6.0 (TID 16). 3199 bytes result sent to driver
+21/09/13 06:47:04 INFO TaskSetManager: Starting task 8.0 in stage 6.0 (TID 17) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 13, PROCESS_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/13 06:47:04 INFO Executor: Running task 8.0 in stage 6.0 (TID 17)
+21/09/13 06:47:04 INFO TaskSetManager: Finished task 7.0 in stage 6.0 (TID 16) in 15 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (10/20)
+21/09/13 06:47:04 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/13 06:47:04 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 1 ms
+21/09/13 06:47:04 INFO Executor: Finished task 8.0 in stage 6.0 (TID 17). 3242 bytes result sent to driver
+21/09/13 06:47:04 INFO TaskSetManager: Starting task 9.0 in stage 6.0 (TID 18) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 14, PROCESS_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/13 06:47:04 INFO Executor: Running task 9.0 in stage 6.0 (TID 18)
+21/09/13 06:47:04 INFO TaskSetManager: Finished task 8.0 in stage 6.0 (TID 17) in 17 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (11/20)
+21/09/13 06:47:04 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/13 06:47:04 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+21/09/13 06:47:04 INFO Executor: Finished task 9.0 in stage 6.0 (TID 18). 3199 bytes result sent to driver
+21/09/13 06:47:04 INFO TaskSetManager: Starting task 10.0 in stage 6.0 (TID 19) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 15, PROCESS_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/13 06:47:04 INFO Executor: Running task 10.0 in stage 6.0 (TID 19)
+21/09/13 06:47:04 INFO TaskSetManager: Finished task 9.0 in stage 6.0 (TID 18) in 11 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (12/20)
+21/09/13 06:47:04 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/13 06:47:04 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+21/09/13 06:47:04 INFO Executor: Finished task 10.0 in stage 6.0 (TID 19). 3199 bytes result sent to driver
+21/09/13 06:47:04 INFO TaskSetManager: Starting task 11.0 in stage 6.0 (TID 20) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 16, PROCESS_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/13 06:47:04 INFO TaskSetManager: Finished task 10.0 in stage 6.0 (TID 19) in 13 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (13/20)
+21/09/13 06:47:04 INFO Executor: Running task 11.0 in stage 6.0 (TID 20)
+21/09/13 06:47:04 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/13 06:47:04 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+21/09/13 06:47:04 INFO Executor: Finished task 11.0 in stage 6.0 (TID 20). 3199 bytes result sent to driver
+21/09/13 06:47:04 INFO TaskSetManager: Starting task 12.0 in stage 6.0 (TID 21) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 17, PROCESS_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/13 06:47:04 INFO Executor: Running task 12.0 in stage 6.0 (TID 21)
+21/09/13 06:47:04 INFO TaskSetManager: Finished task 11.0 in stage 6.0 (TID 20) in 12 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (14/20)
+21/09/13 06:47:04 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/13 06:47:04 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+21/09/13 06:47:04 INFO Executor: Finished task 12.0 in stage 6.0 (TID 21). 3242 bytes result sent to driver
+21/09/13 06:47:04 INFO TaskSetManager: Starting task 13.0 in stage 6.0 (TID 22) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 18, PROCESS_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/13 06:47:04 INFO Executor: Running task 13.0 in stage 6.0 (TID 22)
+21/09/13 06:47:04 INFO TaskSetManager: Finished task 12.0 in stage 6.0 (TID 21) in 11 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (15/20)
+21/09/13 06:47:04 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/13 06:47:04 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+21/09/13 06:47:04 INFO Executor: Finished task 13.0 in stage 6.0 (TID 22). 3242 bytes result sent to driver
+21/09/13 06:47:04 INFO TaskSetManager: Starting task 14.0 in stage 6.0 (TID 23) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 19, PROCESS_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/13 06:47:04 INFO TaskSetManager: Finished task 13.0 in stage 6.0 (TID 22) in 14 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (16/20)
+21/09/13 06:47:04 INFO Executor: Running task 14.0 in stage 6.0 (TID 23)
+21/09/13 06:47:04 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/13 06:47:04 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+21/09/13 06:47:04 INFO Executor: Finished task 14.0 in stage 6.0 (TID 23). 3199 bytes result sent to driver
+21/09/13 06:47:04 INFO TaskSetManager: Starting task 15.0 in stage 6.0 (TID 24) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 20, PROCESS_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/13 06:47:04 INFO Executor: Running task 15.0 in stage 6.0 (TID 24)
+21/09/13 06:47:04 INFO TaskSetManager: Finished task 14.0 in stage 6.0 (TID 23) in 15 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (17/20)
+21/09/13 06:47:04 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/13 06:47:04 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+21/09/13 06:47:04 INFO Executor: Finished task 15.0 in stage 6.0 (TID 24). 3199 bytes result sent to driver
+21/09/13 06:47:04 INFO TaskSetManager: Starting task 18.0 in stage 6.0 (TID 25) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 23, PROCESS_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/13 06:47:04 INFO Executor: Running task 18.0 in stage 6.0 (TID 25)
+21/09/13 06:47:04 INFO TaskSetManager: Finished task 15.0 in stage 6.0 (TID 24) in 12 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (18/20)
+21/09/13 06:47:04 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/13 06:47:04 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+21/09/13 06:47:04 INFO Executor: Finished task 18.0 in stage 6.0 (TID 25). 3199 bytes result sent to driver
+21/09/13 06:47:04 INFO TaskSetManager: Starting task 19.0 in stage 6.0 (TID 26) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 24, PROCESS_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/13 06:47:04 INFO Executor: Running task 19.0 in stage 6.0 (TID 26)
+21/09/13 06:47:04 INFO TaskSetManager: Finished task 18.0 in stage 6.0 (TID 25) in 10 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (19/20)
+21/09/13 06:47:04 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/13 06:47:04 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+21/09/13 06:47:04 INFO Executor: Finished task 19.0 in stage 6.0 (TID 26). 3199 bytes result sent to driver
+21/09/13 06:47:04 INFO TaskSetManager: Finished task 19.0 in stage 6.0 (TID 26) in 9 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (20/20)
+21/09/13 06:47:04 INFO TaskSchedulerImpl: Removed TaskSet 6.0, whose tasks have all completed, from pool
+21/09/13 06:47:04 INFO DAGScheduler: ResultStage 6 (showString at <unknown>:0) finished in 0.323 s
+21/09/13 06:47:04 INFO DAGScheduler: Job 3 is finished. Cancelling potential speculative or zombie tasks for this job
+21/09/13 06:47:04 INFO TaskSchedulerImpl: Killing all running tasks in stage 6: Stage finished
+21/09/13 06:47:04 INFO DAGScheduler: Job 3 finished: showString at <unknown>:0, took 0.332947 s
+21/09/13 06:47:04 INFO SparkContext: Starting job: showString at <unknown>:0
+21/09/13 06:47:04 INFO DAGScheduler: Got job 4 (showString at <unknown>:0) with 100 output partitions
+21/09/13 06:47:04 INFO DAGScheduler: Final stage: ResultStage 8 (showString at <unknown>:0)
+21/09/13 06:47:04 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 7)
+21/09/13 06:47:04 INFO DAGScheduler: Missing parents: List()
+21/09/13 06:47:04 INFO DAGScheduler: Submitting ResultStage 8 (MapPartitionsRDD[10] at showString at <unknown>:0), which has no missing parents
+21/09/13 06:47:04 INFO MemoryStore: Block broadcast_6 stored as values in memory (estimated size 27.5 KiB, free 365.8 MiB)
+21/09/13 06:47:04 INFO MemoryStore: Block broadcast_6_piece0 stored as bytes in memory (estimated size 13.4 KiB, free 365.8 MiB)
+21/09/13 06:47:04 INFO BlockManagerInfo: Added broadcast_6_piece0 in memory on LAPTOP-TN9MOJSU.mshome.net:57318 (size: 13.4 KiB, free: 366.2 MiB)
+21/09/13 06:47:04 INFO SparkContext: Created broadcast 6 from broadcast at DAGScheduler.scala:1388
+21/09/13 06:47:04 INFO DAGScheduler: Submitting 100 missing tasks from ResultStage 8 (MapPartitionsRDD[10] at showString at <unknown>:0) (first 15 tasks are for partitions Vector(25, 26, 27, 28, 29, 30, 31, 32, 33
+, 34, 35, 36, 37, 38, 39))
+21/09/13 06:47:04 INFO TaskSchedulerImpl: Adding task set 8.0 with 100 tasks resource profile 0
+21/09/13 06:47:04 INFO TaskSetManager: Starting task 7.0 in stage 8.0 (TID 27) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 32, NODE_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/13 06:47:04 INFO Executor: Running task 7.0 in stage 8.0 (TID 27)
+21/09/13 06:47:04 INFO ShuffleBlockFetcherIterator: Getting 1 (142.0 B) non-empty blocks including 1 (142.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/13 06:47:04 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 1 ms
+21/09/13 06:47:04 INFO Executor: Finished task 7.0 in stage 8.0 (TID 27). 3414 bytes result sent to driver
+21/09/13 06:47:04 INFO TaskSetManager: Starting task 17.0 in stage 8.0 (TID 28) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 42, NODE_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/13 06:47:04 INFO TaskSetManager: Finished task 7.0 in stage 8.0 (TID 27) in 33 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (1/100)
+21/09/13 06:47:04 INFO Executor: Running task 17.0 in stage 8.0 (TID 28)
+21/09/13 06:47:04 INFO ShuffleBlockFetcherIterator: Getting 1 (142.0 B) non-empty blocks including 1 (142.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/13 06:47:04 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 1 ms
+21/09/13 06:47:04 INFO Executor: Finished task 17.0 in stage 8.0 (TID 28). 3367 bytes result sent to driver
+21/09/13 06:47:04 INFO TaskSetManager: Starting task 23.0 in stage 8.0 (TID 29) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 48, NODE_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/13 06:47:04 INFO TaskSetManager: Finished task 17.0 in stage 8.0 (TID 28) in 37 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (2/100)
+21/09/13 06:47:04 INFO Executor: Running task 23.0 in stage 8.0 (TID 29)
+21/09/13 06:47:04 INFO ShuffleBlockFetcherIterator: Getting 1 (142.0 B) non-empty blocks including 1 (142.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/13 06:47:04 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 1 ms
+21/09/13 06:47:05 INFO Executor: Finished task 23.0 in stage 8.0 (TID 29). 3414 bytes result sent to driver
+21/09/13 06:47:05 INFO TaskSetManager: Starting task 42.0 in stage 8.0 (TID 30) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 67, NODE_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/13 06:47:05 INFO Executor: Running task 42.0 in stage 8.0 (TID 30)
+21/09/13 06:47:05 INFO TaskSetManager: Finished task 23.0 in stage 8.0 (TID 29) in 32 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (3/100)
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Getting 1 (142.0 B) non-empty blocks including 1 (142.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+21/09/13 06:47:05 INFO Executor: Finished task 42.0 in stage 8.0 (TID 30). 3367 bytes result sent to driver
+21/09/13 06:47:05 INFO TaskSetManager: Starting task 43.0 in stage 8.0 (TID 31) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 68, NODE_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/13 06:47:05 INFO Executor: Running task 43.0 in stage 8.0 (TID 31)
+21/09/13 06:47:05 INFO TaskSetManager: Finished task 42.0 in stage 8.0 (TID 30) in 40 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (4/100)
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Getting 1 (142.0 B) non-empty blocks including 1 (142.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 9 ms
+21/09/13 06:47:05 INFO Executor: Finished task 43.0 in stage 8.0 (TID 31). 3414 bytes result sent to driver
+21/09/13 06:47:05 INFO TaskSetManager: Starting task 47.0 in stage 8.0 (TID 32) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 72, NODE_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/13 06:47:05 INFO TaskSetManager: Finished task 43.0 in stage 8.0 (TID 31) in 53 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (5/100)
+21/09/13 06:47:05 INFO Executor: Running task 47.0 in stage 8.0 (TID 32)
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Getting 1 (142.0 B) non-empty blocks including 1 (142.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 4 ms
+21/09/13 06:47:05 INFO Executor: Finished task 47.0 in stage 8.0 (TID 32). 3366 bytes result sent to driver
+21/09/13 06:47:05 INFO TaskSetManager: Starting task 50.0 in stage 8.0 (TID 33) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 75, NODE_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/13 06:47:05 INFO Executor: Running task 50.0 in stage 8.0 (TID 33)
+21/09/13 06:47:05 INFO TaskSetManager: Finished task 47.0 in stage 8.0 (TID 32) in 36 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (6/100)
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Getting 1 (142.0 B) non-empty blocks including 1 (142.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 1 ms
+21/09/13 06:47:05 INFO Executor: Finished task 50.0 in stage 8.0 (TID 33). 3324 bytes result sent to driver
+21/09/13 06:47:05 INFO TaskSetManager: Starting task 56.0 in stage 8.0 (TID 34) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 81, NODE_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/13 06:47:05 INFO TaskSetManager: Finished task 50.0 in stage 8.0 (TID 33) in 27 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (7/100)
+21/09/13 06:47:05 INFO Executor: Running task 56.0 in stage 8.0 (TID 34)
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Getting 1 (171.0 B) non-empty blocks including 1 (171.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+21/09/13 06:47:05 INFO Executor: Finished task 56.0 in stage 8.0 (TID 34). 3401 bytes result sent to driver
+21/09/13 06:47:05 INFO TaskSetManager: Starting task 58.0 in stage 8.0 (TID 35) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 83, NODE_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/13 06:47:05 INFO Executor: Running task 58.0 in stage 8.0 (TID 35)
+21/09/13 06:47:05 INFO TaskSetManager: Finished task 56.0 in stage 8.0 (TID 34) in 26 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (8/100)
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Getting 1 (142.0 B) non-empty blocks including 1 (142.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+21/09/13 06:47:05 INFO Executor: Finished task 58.0 in stage 8.0 (TID 35). 3371 bytes result sent to driver
+21/09/13 06:47:05 INFO TaskSetManager: Starting task 59.0 in stage 8.0 (TID 36) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 84, NODE_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/13 06:47:05 INFO Executor: Running task 59.0 in stage 8.0 (TID 36)
+21/09/13 06:47:05 INFO TaskSetManager: Finished task 58.0 in stage 8.0 (TID 35) in 24 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (9/100)
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Getting 1 (142.0 B) non-empty blocks including 1 (142.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+21/09/13 06:47:05 INFO Executor: Finished task 59.0 in stage 8.0 (TID 36). 3367 bytes result sent to driver
+21/09/13 06:47:05 INFO TaskSetManager: Starting task 73.0 in stage 8.0 (TID 37) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 98, NODE_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/13 06:47:05 INFO Executor: Running task 73.0 in stage 8.0 (TID 37)
+21/09/13 06:47:05 INFO TaskSetManager: Finished task 59.0 in stage 8.0 (TID 36) in 19 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (10/100)
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Getting 1 (171.0 B) non-empty blocks including 1 (171.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+21/09/13 06:47:05 INFO Executor: Finished task 73.0 in stage 8.0 (TID 37). 3415 bytes result sent to driver
+21/09/13 06:47:05 INFO TaskSetManager: Starting task 87.0 in stage 8.0 (TID 38) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 112, NODE_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/13 06:47:05 INFO Executor: Running task 87.0 in stage 8.0 (TID 38)
+21/09/13 06:47:05 INFO TaskSetManager: Finished task 73.0 in stage 8.0 (TID 37) in 19 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (11/100)
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Getting 1 (142.0 B) non-empty blocks including 1 (142.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+21/09/13 06:47:05 INFO Executor: Finished task 87.0 in stage 8.0 (TID 38). 3367 bytes result sent to driver
+21/09/13 06:47:05 INFO TaskSetManager: Starting task 89.0 in stage 8.0 (TID 39) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 114, NODE_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/13 06:47:05 INFO Executor: Running task 89.0 in stage 8.0 (TID 39)
+21/09/13 06:47:05 INFO TaskSetManager: Finished task 87.0 in stage 8.0 (TID 38) in 19 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (12/100)
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Getting 1 (142.0 B) non-empty blocks including 1 (142.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+21/09/13 06:47:05 INFO Executor: Finished task 89.0 in stage 8.0 (TID 39). 3371 bytes result sent to driver
+21/09/13 06:47:05 INFO TaskSetManager: Starting task 91.0 in stage 8.0 (TID 40) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 116, NODE_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/13 06:47:05 INFO TaskSetManager: Finished task 89.0 in stage 8.0 (TID 39) in 21 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (13/100)
+21/09/13 06:47:05 INFO Executor: Running task 91.0 in stage 8.0 (TID 40)
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Getting 1 (142.0 B) non-empty blocks including 1 (142.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 1 ms
+21/09/13 06:47:05 INFO Executor: Finished task 91.0 in stage 8.0 (TID 40). 3367 bytes result sent to driver
+21/09/13 06:47:05 INFO TaskSetManager: Starting task 93.0 in stage 8.0 (TID 41) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 118, NODE_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/13 06:47:05 INFO Executor: Running task 93.0 in stage 8.0 (TID 41)
+21/09/13 06:47:05 INFO TaskSetManager: Finished task 91.0 in stage 8.0 (TID 40) in 20 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (14/100)
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Getting 1 (142.0 B) non-empty blocks including 1 (142.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+21/09/13 06:47:05 INFO Executor: Finished task 93.0 in stage 8.0 (TID 41). 3367 bytes result sent to driver
+21/09/13 06:47:05 INFO TaskSetManager: Starting task 98.0 in stage 8.0 (TID 42) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 123, NODE_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/13 06:47:05 INFO Executor: Running task 98.0 in stage 8.0 (TID 42)
+21/09/13 06:47:05 INFO TaskSetManager: Finished task 93.0 in stage 8.0 (TID 41) in 20 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (15/100)
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Getting 1 (142.0 B) non-empty blocks including 1 (142.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+21/09/13 06:47:05 INFO Executor: Finished task 98.0 in stage 8.0 (TID 42). 3371 bytes result sent to driver
+21/09/13 06:47:05 INFO TaskSetManager: Starting task 0.0 in stage 8.0 (TID 43) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 25, PROCESS_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/13 06:47:05 INFO TaskSetManager: Finished task 98.0 in stage 8.0 (TID 42) in 19 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (16/100)
+21/09/13 06:47:05 INFO Executor: Running task 0.0 in stage 8.0 (TID 43)
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+21/09/13 06:47:05 INFO Executor: Finished task 0.0 in stage 8.0 (TID 43). 3199 bytes result sent to driver
+21/09/13 06:47:05 INFO TaskSetManager: Starting task 1.0 in stage 8.0 (TID 44) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 26, PROCESS_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/13 06:47:05 INFO TaskSetManager: Finished task 0.0 in stage 8.0 (TID 43) in 15 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (17/100)
+21/09/13 06:47:05 INFO Executor: Running task 1.0 in stage 8.0 (TID 44)
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+21/09/13 06:47:05 INFO Executor: Finished task 1.0 in stage 8.0 (TID 44). 3199 bytes result sent to driver
+21/09/13 06:47:05 INFO TaskSetManager: Starting task 2.0 in stage 8.0 (TID 45) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 27, PROCESS_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/13 06:47:05 INFO Executor: Running task 2.0 in stage 8.0 (TID 45)
+21/09/13 06:47:05 INFO TaskSetManager: Finished task 1.0 in stage 8.0 (TID 44) in 12 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (18/100)
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+21/09/13 06:47:05 INFO Executor: Finished task 2.0 in stage 8.0 (TID 45). 3242 bytes result sent to driver
+21/09/13 06:47:05 INFO TaskSetManager: Starting task 3.0 in stage 8.0 (TID 46) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 28, PROCESS_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/13 06:47:05 INFO Executor: Running task 3.0 in stage 8.0 (TID 46)
+21/09/13 06:47:05 INFO TaskSetManager: Finished task 2.0 in stage 8.0 (TID 45) in 8 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (19/100)
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+21/09/13 06:47:05 INFO Executor: Finished task 3.0 in stage 8.0 (TID 46). 3199 bytes result sent to driver
+21/09/13 06:47:05 INFO TaskSetManager: Starting task 4.0 in stage 8.0 (TID 47) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 29, PROCESS_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/13 06:47:05 INFO Executor: Running task 4.0 in stage 8.0 (TID 47)
+21/09/13 06:47:05 INFO TaskSetManager: Finished task 3.0 in stage 8.0 (TID 46) in 6 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (20/100)
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+21/09/13 06:47:05 INFO Executor: Finished task 4.0 in stage 8.0 (TID 47). 3242 bytes result sent to driver
+21/09/13 06:47:05 INFO TaskSetManager: Starting task 5.0 in stage 8.0 (TID 48) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 30, PROCESS_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/13 06:47:05 INFO TaskSetManager: Finished task 4.0 in stage 8.0 (TID 47) in 7 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (21/100)
+21/09/13 06:47:05 INFO Executor: Running task 5.0 in stage 8.0 (TID 48)
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+21/09/13 06:47:05 INFO Executor: Finished task 5.0 in stage 8.0 (TID 48). 3199 bytes result sent to driver
+21/09/13 06:47:05 INFO TaskSetManager: Starting task 6.0 in stage 8.0 (TID 49) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 31, PROCESS_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/13 06:47:05 INFO TaskSetManager: Finished task 5.0 in stage 8.0 (TID 48) in 7 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (22/100)
+21/09/13 06:47:05 INFO Executor: Running task 6.0 in stage 8.0 (TID 49)
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+21/09/13 06:47:05 INFO Executor: Finished task 6.0 in stage 8.0 (TID 49). 3199 bytes result sent to driver
+21/09/13 06:47:05 INFO TaskSetManager: Starting task 8.0 in stage 8.0 (TID 50) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 33, PROCESS_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/13 06:47:05 INFO Executor: Running task 8.0 in stage 8.0 (TID 50)
+21/09/13 06:47:05 INFO TaskSetManager: Finished task 6.0 in stage 8.0 (TID 49) in 8 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (23/100)
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+21/09/13 06:47:05 INFO Executor: Finished task 8.0 in stage 8.0 (TID 50). 3199 bytes result sent to driver
+21/09/13 06:47:05 INFO TaskSetManager: Starting task 9.0 in stage 8.0 (TID 51) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 34, PROCESS_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/13 06:47:05 INFO TaskSetManager: Finished task 8.0 in stage 8.0 (TID 50) in 10 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (24/100)
+21/09/13 06:47:05 INFO Executor: Running task 9.0 in stage 8.0 (TID 51)
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+21/09/13 06:47:05 INFO Executor: Finished task 9.0 in stage 8.0 (TID 51). 3242 bytes result sent to driver
+21/09/13 06:47:05 INFO TaskSetManager: Starting task 10.0 in stage 8.0 (TID 52) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 35, PROCESS_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/13 06:47:05 INFO TaskSetManager: Finished task 9.0 in stage 8.0 (TID 51) in 8 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (25/100)
+21/09/13 06:47:05 INFO Executor: Running task 10.0 in stage 8.0 (TID 52)
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+21/09/13 06:47:05 INFO Executor: Finished task 10.0 in stage 8.0 (TID 52). 3199 bytes result sent to driver
+21/09/13 06:47:05 INFO TaskSetManager: Starting task 11.0 in stage 8.0 (TID 53) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 36, PROCESS_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/13 06:47:05 INFO Executor: Running task 11.0 in stage 8.0 (TID 53)
+21/09/13 06:47:05 INFO TaskSetManager: Finished task 10.0 in stage 8.0 (TID 52) in 9 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (26/100)
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+21/09/13 06:47:05 INFO Executor: Finished task 11.0 in stage 8.0 (TID 53). 3242 bytes result sent to driver
+21/09/13 06:47:05 INFO TaskSetManager: Starting task 12.0 in stage 8.0 (TID 54) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 37, PROCESS_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/13 06:47:05 INFO Executor: Running task 12.0 in stage 8.0 (TID 54)
+21/09/13 06:47:05 INFO TaskSetManager: Finished task 11.0 in stage 8.0 (TID 53) in 10 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (27/100)
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+21/09/13 06:47:05 INFO Executor: Finished task 12.0 in stage 8.0 (TID 54). 3199 bytes result sent to driver
+21/09/13 06:47:05 INFO TaskSetManager: Starting task 13.0 in stage 8.0 (TID 55) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 38, PROCESS_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/13 06:47:05 INFO TaskSetManager: Finished task 12.0 in stage 8.0 (TID 54) in 9 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (28/100)
+21/09/13 06:47:05 INFO Executor: Running task 13.0 in stage 8.0 (TID 55)
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+21/09/13 06:47:05 INFO Executor: Finished task 13.0 in stage 8.0 (TID 55). 3242 bytes result sent to driver
+21/09/13 06:47:05 INFO TaskSetManager: Starting task 14.0 in stage 8.0 (TID 56) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 39, PROCESS_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/13 06:47:05 INFO TaskSetManager: Finished task 13.0 in stage 8.0 (TID 55) in 9 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (29/100)
+21/09/13 06:47:05 INFO Executor: Running task 14.0 in stage 8.0 (TID 56)
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+21/09/13 06:47:05 INFO Executor: Finished task 14.0 in stage 8.0 (TID 56). 3199 bytes result sent to driver
+21/09/13 06:47:05 INFO TaskSetManager: Starting task 15.0 in stage 8.0 (TID 57) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 40, PROCESS_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/13 06:47:05 INFO Executor: Running task 15.0 in stage 8.0 (TID 57)
+21/09/13 06:47:05 INFO TaskSetManager: Finished task 14.0 in stage 8.0 (TID 56) in 10 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (30/100)
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+21/09/13 06:47:05 INFO Executor: Finished task 15.0 in stage 8.0 (TID 57). 3242 bytes result sent to driver
+21/09/13 06:47:05 INFO TaskSetManager: Starting task 16.0 in stage 8.0 (TID 58) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 41, PROCESS_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/13 06:47:05 INFO Executor: Running task 16.0 in stage 8.0 (TID 58)
+21/09/13 06:47:05 INFO TaskSetManager: Finished task 15.0 in stage 8.0 (TID 57) in 8 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (31/100)
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+21/09/13 06:47:05 INFO Executor: Finished task 16.0 in stage 8.0 (TID 58). 3199 bytes result sent to driver
+21/09/13 06:47:05 INFO TaskSetManager: Starting task 18.0 in stage 8.0 (TID 59) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 43, PROCESS_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/13 06:47:05 INFO Executor: Running task 18.0 in stage 8.0 (TID 59)
+21/09/13 06:47:05 INFO TaskSetManager: Finished task 16.0 in stage 8.0 (TID 58) in 9 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (32/100)
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+21/09/13 06:47:05 INFO Executor: Finished task 18.0 in stage 8.0 (TID 59). 3242 bytes result sent to driver
+21/09/13 06:47:05 INFO TaskSetManager: Starting task 19.0 in stage 8.0 (TID 60) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 44, PROCESS_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/13 06:47:05 INFO Executor: Running task 19.0 in stage 8.0 (TID 60)
+21/09/13 06:47:05 INFO TaskSetManager: Finished task 18.0 in stage 8.0 (TID 59) in 10 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (33/100)
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+21/09/13 06:47:05 INFO Executor: Finished task 19.0 in stage 8.0 (TID 60). 3199 bytes result sent to driver
+21/09/13 06:47:05 INFO TaskSetManager: Starting task 20.0 in stage 8.0 (TID 61) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 45, PROCESS_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/13 06:47:05 INFO TaskSetManager: Finished task 19.0 in stage 8.0 (TID 60) in 9 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (34/100)
+21/09/13 06:47:05 INFO Executor: Running task 20.0 in stage 8.0 (TID 61)
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+21/09/13 06:47:05 INFO Executor: Finished task 20.0 in stage 8.0 (TID 61). 3199 bytes result sent to driver
+21/09/13 06:47:05 INFO TaskSetManager: Starting task 21.0 in stage 8.0 (TID 62) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 46, PROCESS_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/13 06:47:05 INFO Executor: Running task 21.0 in stage 8.0 (TID 62)
+21/09/13 06:47:05 INFO TaskSetManager: Finished task 20.0 in stage 8.0 (TID 61) in 11 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (35/100)
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+21/09/13 06:47:05 INFO Executor: Finished task 21.0 in stage 8.0 (TID 62). 3242 bytes result sent to driver
+21/09/13 06:47:05 INFO TaskSetManager: Starting task 22.0 in stage 8.0 (TID 63) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 47, PROCESS_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/13 06:47:05 INFO Executor: Running task 22.0 in stage 8.0 (TID 63)
+21/09/13 06:47:05 INFO TaskSetManager: Finished task 21.0 in stage 8.0 (TID 62) in 11 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (36/100)
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+21/09/13 06:47:05 INFO Executor: Finished task 22.0 in stage 8.0 (TID 63). 3199 bytes result sent to driver
+21/09/13 06:47:05 INFO TaskSetManager: Starting task 24.0 in stage 8.0 (TID 64) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 49, PROCESS_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/13 06:47:05 INFO Executor: Running task 24.0 in stage 8.0 (TID 64)
+21/09/13 06:47:05 INFO TaskSetManager: Finished task 22.0 in stage 8.0 (TID 63) in 9 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (37/100)
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+21/09/13 06:47:05 INFO Executor: Finished task 24.0 in stage 8.0 (TID 64). 3199 bytes result sent to driver
+21/09/13 06:47:05 INFO TaskSetManager: Starting task 25.0 in stage 8.0 (TID 65) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 50, PROCESS_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/13 06:47:05 INFO TaskSetManager: Finished task 24.0 in stage 8.0 (TID 64) in 9 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (38/100)
+21/09/13 06:47:05 INFO Executor: Running task 25.0 in stage 8.0 (TID 65)
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+21/09/13 06:47:05 INFO Executor: Finished task 25.0 in stage 8.0 (TID 65). 3199 bytes result sent to driver
+21/09/13 06:47:05 INFO TaskSetManager: Starting task 26.0 in stage 8.0 (TID 66) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 51, PROCESS_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/13 06:47:05 INFO TaskSetManager: Finished task 25.0 in stage 8.0 (TID 65) in 9 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (39/100)
+21/09/13 06:47:05 INFO Executor: Running task 26.0 in stage 8.0 (TID 66)
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+21/09/13 06:47:05 INFO Executor: Finished task 26.0 in stage 8.0 (TID 66). 3199 bytes result sent to driver
+21/09/13 06:47:05 INFO TaskSetManager: Starting task 27.0 in stage 8.0 (TID 67) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 52, PROCESS_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/13 06:47:05 INFO Executor: Running task 27.0 in stage 8.0 (TID 67)
+21/09/13 06:47:05 INFO TaskSetManager: Finished task 26.0 in stage 8.0 (TID 66) in 8 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (40/100)
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+21/09/13 06:47:05 INFO Executor: Finished task 27.0 in stage 8.0 (TID 67). 3199 bytes result sent to driver
+21/09/13 06:47:05 INFO TaskSetManager: Starting task 28.0 in stage 8.0 (TID 68) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 53, PROCESS_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/13 06:47:05 INFO Executor: Running task 28.0 in stage 8.0 (TID 68)
+21/09/13 06:47:05 INFO TaskSetManager: Finished task 27.0 in stage 8.0 (TID 67) in 9 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (41/100)
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+21/09/13 06:47:05 INFO Executor: Finished task 28.0 in stage 8.0 (TID 68). 3199 bytes result sent to driver
+21/09/13 06:47:05 INFO TaskSetManager: Starting task 29.0 in stage 8.0 (TID 69) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 54, PROCESS_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/13 06:47:05 INFO TaskSetManager: Finished task 28.0 in stage 8.0 (TID 68) in 8 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (42/100)
+21/09/13 06:47:05 INFO Executor: Running task 29.0 in stage 8.0 (TID 69)
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+21/09/13 06:47:05 INFO Executor: Finished task 29.0 in stage 8.0 (TID 69). 3199 bytes result sent to driver
+21/09/13 06:47:05 INFO TaskSetManager: Starting task 30.0 in stage 8.0 (TID 70) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 55, PROCESS_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/13 06:47:05 INFO TaskSetManager: Finished task 29.0 in stage 8.0 (TID 69) in 9 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (43/100)
+21/09/13 06:47:05 INFO Executor: Running task 30.0 in stage 8.0 (TID 70)
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+21/09/13 06:47:05 INFO Executor: Finished task 30.0 in stage 8.0 (TID 70). 3199 bytes result sent to driver
+21/09/13 06:47:05 INFO TaskSetManager: Starting task 31.0 in stage 8.0 (TID 71) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 56, PROCESS_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/13 06:47:05 INFO TaskSetManager: Finished task 30.0 in stage 8.0 (TID 70) in 7 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (44/100)
+21/09/13 06:47:05 INFO Executor: Running task 31.0 in stage 8.0 (TID 71)
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+21/09/13 06:47:05 INFO Executor: Finished task 31.0 in stage 8.0 (TID 71). 3242 bytes result sent to driver
+21/09/13 06:47:05 INFO TaskSetManager: Starting task 32.0 in stage 8.0 (TID 72) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 57, PROCESS_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/13 06:47:05 INFO Executor: Running task 32.0 in stage 8.0 (TID 72)
+21/09/13 06:47:05 INFO TaskSetManager: Finished task 31.0 in stage 8.0 (TID 71) in 8 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (45/100)
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+21/09/13 06:47:05 INFO Executor: Finished task 32.0 in stage 8.0 (TID 72). 3199 bytes result sent to driver
+21/09/13 06:47:05 INFO TaskSetManager: Starting task 33.0 in stage 8.0 (TID 73) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 58, PROCESS_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/13 06:47:05 INFO Executor: Running task 33.0 in stage 8.0 (TID 73)
+21/09/13 06:47:05 INFO TaskSetManager: Finished task 32.0 in stage 8.0 (TID 72) in 8 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (46/100)
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+21/09/13 06:47:05 INFO Executor: Finished task 33.0 in stage 8.0 (TID 73). 3242 bytes result sent to driver
+21/09/13 06:47:05 INFO TaskSetManager: Starting task 34.0 in stage 8.0 (TID 74) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 59, PROCESS_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/13 06:47:05 INFO Executor: Running task 34.0 in stage 8.0 (TID 74)
+21/09/13 06:47:05 INFO TaskSetManager: Finished task 33.0 in stage 8.0 (TID 73) in 7 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (47/100)
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+21/09/13 06:47:05 INFO Executor: Finished task 34.0 in stage 8.0 (TID 74). 3199 bytes result sent to driver
+21/09/13 06:47:05 INFO TaskSetManager: Starting task 35.0 in stage 8.0 (TID 75) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 60, PROCESS_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/13 06:47:05 INFO TaskSetManager: Finished task 34.0 in stage 8.0 (TID 74) in 6 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (48/100)
+21/09/13 06:47:05 INFO Executor: Running task 35.0 in stage 8.0 (TID 75)
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+21/09/13 06:47:05 INFO Executor: Finished task 35.0 in stage 8.0 (TID 75). 3199 bytes result sent to driver
+21/09/13 06:47:05 INFO TaskSetManager: Starting task 36.0 in stage 8.0 (TID 76) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 61, PROCESS_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/13 06:47:05 INFO Executor: Running task 36.0 in stage 8.0 (TID 76)
+21/09/13 06:47:05 INFO TaskSetManager: Finished task 35.0 in stage 8.0 (TID 75) in 6 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (49/100)
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+21/09/13 06:47:05 INFO Executor: Finished task 36.0 in stage 8.0 (TID 76). 3242 bytes result sent to driver
+21/09/13 06:47:05 INFO TaskSetManager: Starting task 37.0 in stage 8.0 (TID 77) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 62, PROCESS_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/13 06:47:05 INFO TaskSetManager: Finished task 36.0 in stage 8.0 (TID 76) in 15 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (50/100)
+21/09/13 06:47:05 INFO Executor: Running task 37.0 in stage 8.0 (TID 77)
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+21/09/13 06:47:05 INFO Executor: Finished task 37.0 in stage 8.0 (TID 77). 3242 bytes result sent to driver
+21/09/13 06:47:05 INFO TaskSetManager: Starting task 38.0 in stage 8.0 (TID 78) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 63, PROCESS_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/13 06:47:05 INFO TaskSetManager: Finished task 37.0 in stage 8.0 (TID 77) in 5 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (51/100)
+21/09/13 06:47:05 INFO Executor: Running task 38.0 in stage 8.0 (TID 78)
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+21/09/13 06:47:05 INFO Executor: Finished task 38.0 in stage 8.0 (TID 78). 3199 bytes result sent to driver
+21/09/13 06:47:05 INFO TaskSetManager: Starting task 39.0 in stage 8.0 (TID 79) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 64, PROCESS_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/13 06:47:05 INFO Executor: Running task 39.0 in stage 8.0 (TID 79)
+21/09/13 06:47:05 INFO TaskSetManager: Finished task 38.0 in stage 8.0 (TID 78) in 5 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (52/100)
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+21/09/13 06:47:05 INFO Executor: Finished task 39.0 in stage 8.0 (TID 79). 3199 bytes result sent to driver
+21/09/13 06:47:05 INFO TaskSetManager: Starting task 40.0 in stage 8.0 (TID 80) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 65, PROCESS_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/13 06:47:05 INFO Executor: Running task 40.0 in stage 8.0 (TID 80)
+21/09/13 06:47:05 INFO TaskSetManager: Finished task 39.0 in stage 8.0 (TID 79) in 6 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (53/100)
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+21/09/13 06:47:05 INFO Executor: Finished task 40.0 in stage 8.0 (TID 80). 3242 bytes result sent to driver
+21/09/13 06:47:05 INFO TaskSetManager: Starting task 41.0 in stage 8.0 (TID 81) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 66, PROCESS_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/13 06:47:05 INFO Executor: Running task 41.0 in stage 8.0 (TID 81)
+21/09/13 06:47:05 INFO TaskSetManager: Finished task 40.0 in stage 8.0 (TID 80) in 7 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (54/100)
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+21/09/13 06:47:05 INFO Executor: Finished task 41.0 in stage 8.0 (TID 81). 3199 bytes result sent to driver
+21/09/13 06:47:05 INFO TaskSetManager: Starting task 44.0 in stage 8.0 (TID 82) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 69, PROCESS_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/13 06:47:05 INFO Executor: Running task 44.0 in stage 8.0 (TID 82)
+21/09/13 06:47:05 INFO TaskSetManager: Finished task 41.0 in stage 8.0 (TID 81) in 7 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (55/100)
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+21/09/13 06:47:05 INFO Executor: Finished task 44.0 in stage 8.0 (TID 82). 3199 bytes result sent to driver
+21/09/13 06:47:05 INFO TaskSetManager: Starting task 45.0 in stage 8.0 (TID 83) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 70, PROCESS_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/13 06:47:05 INFO Executor: Running task 45.0 in stage 8.0 (TID 83)
+21/09/13 06:47:05 INFO TaskSetManager: Finished task 44.0 in stage 8.0 (TID 82) in 5 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (56/100)
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+21/09/13 06:47:05 INFO Executor: Finished task 45.0 in stage 8.0 (TID 83). 3199 bytes result sent to driver
+21/09/13 06:47:05 INFO TaskSetManager: Starting task 46.0 in stage 8.0 (TID 84) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 71, PROCESS_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/13 06:47:05 INFO Executor: Running task 46.0 in stage 8.0 (TID 84)
+21/09/13 06:47:05 INFO TaskSetManager: Finished task 45.0 in stage 8.0 (TID 83) in 5 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (57/100)
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+21/09/13 06:47:05 INFO Executor: Finished task 46.0 in stage 8.0 (TID 84). 3199 bytes result sent to driver
+21/09/13 06:47:05 INFO TaskSetManager: Starting task 48.0 in stage 8.0 (TID 85) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 73, PROCESS_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/13 06:47:05 INFO Executor: Running task 48.0 in stage 8.0 (TID 85)
+21/09/13 06:47:05 INFO TaskSetManager: Finished task 46.0 in stage 8.0 (TID 84) in 6 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (58/100)
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+21/09/13 06:47:05 INFO Executor: Finished task 48.0 in stage 8.0 (TID 85). 3199 bytes result sent to driver
+21/09/13 06:47:05 INFO TaskSetManager: Starting task 49.0 in stage 8.0 (TID 86) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 74, PROCESS_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/13 06:47:05 INFO TaskSetManager: Finished task 48.0 in stage 8.0 (TID 85) in 6 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (59/100)
+21/09/13 06:47:05 INFO Executor: Running task 49.0 in stage 8.0 (TID 86)
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+21/09/13 06:47:05 INFO Executor: Finished task 49.0 in stage 8.0 (TID 86). 3242 bytes result sent to driver
+21/09/13 06:47:05 INFO TaskSetManager: Starting task 51.0 in stage 8.0 (TID 87) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 76, PROCESS_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/13 06:47:05 INFO Executor: Running task 51.0 in stage 8.0 (TID 87)
+21/09/13 06:47:05 INFO TaskSetManager: Finished task 49.0 in stage 8.0 (TID 86) in 7 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (60/100)
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+21/09/13 06:47:05 INFO Executor: Finished task 51.0 in stage 8.0 (TID 87). 3199 bytes result sent to driver
+21/09/13 06:47:05 INFO TaskSetManager: Starting task 52.0 in stage 8.0 (TID 88) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 77, PROCESS_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/13 06:47:05 INFO TaskSetManager: Finished task 51.0 in stage 8.0 (TID 87) in 7 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (61/100)
+21/09/13 06:47:05 INFO Executor: Running task 52.0 in stage 8.0 (TID 88)
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+21/09/13 06:47:05 INFO Executor: Finished task 52.0 in stage 8.0 (TID 88). 3199 bytes result sent to driver
+21/09/13 06:47:05 INFO TaskSetManager: Starting task 53.0 in stage 8.0 (TID 89) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 78, PROCESS_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/13 06:47:05 INFO Executor: Running task 53.0 in stage 8.0 (TID 89)
+21/09/13 06:47:05 INFO TaskSetManager: Finished task 52.0 in stage 8.0 (TID 88) in 6 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (62/100)
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+21/09/13 06:47:05 INFO Executor: Finished task 53.0 in stage 8.0 (TID 89). 3199 bytes result sent to driver
+21/09/13 06:47:05 INFO TaskSetManager: Starting task 54.0 in stage 8.0 (TID 90) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 79, PROCESS_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/13 06:47:05 INFO TaskSetManager: Finished task 53.0 in stage 8.0 (TID 89) in 7 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (63/100)
+21/09/13 06:47:05 INFO Executor: Running task 54.0 in stage 8.0 (TID 90)
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+21/09/13 06:47:05 INFO Executor: Finished task 54.0 in stage 8.0 (TID 90). 3199 bytes result sent to driver
+21/09/13 06:47:05 INFO TaskSetManager: Starting task 55.0 in stage 8.0 (TID 91) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 80, PROCESS_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/13 06:47:05 INFO Executor: Running task 55.0 in stage 8.0 (TID 91)
+21/09/13 06:47:05 INFO TaskSetManager: Finished task 54.0 in stage 8.0 (TID 90) in 6 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (64/100)
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+21/09/13 06:47:05 INFO Executor: Finished task 55.0 in stage 8.0 (TID 91). 3199 bytes result sent to driver
+21/09/13 06:47:05 INFO TaskSetManager: Starting task 57.0 in stage 8.0 (TID 92) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 82, PROCESS_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/13 06:47:05 INFO Executor: Running task 57.0 in stage 8.0 (TID 92)
+21/09/13 06:47:05 INFO TaskSetManager: Finished task 55.0 in stage 8.0 (TID 91) in 6 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (65/100)
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+21/09/13 06:47:05 INFO Executor: Finished task 57.0 in stage 8.0 (TID 92). 3199 bytes result sent to driver
+21/09/13 06:47:05 INFO TaskSetManager: Starting task 60.0 in stage 8.0 (TID 93) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 85, PROCESS_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/13 06:47:05 INFO Executor: Running task 60.0 in stage 8.0 (TID 93)
+21/09/13 06:47:05 INFO TaskSetManager: Finished task 57.0 in stage 8.0 (TID 92) in 6 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (66/100)
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+21/09/13 06:47:05 INFO Executor: Finished task 60.0 in stage 8.0 (TID 93). 3199 bytes result sent to driver
+21/09/13 06:47:05 INFO TaskSetManager: Starting task 61.0 in stage 8.0 (TID 94) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 86, PROCESS_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/13 06:47:05 INFO Executor: Running task 61.0 in stage 8.0 (TID 94)
+21/09/13 06:47:05 INFO TaskSetManager: Finished task 60.0 in stage 8.0 (TID 93) in 6 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (67/100)
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+21/09/13 06:47:05 INFO Executor: Finished task 61.0 in stage 8.0 (TID 94). 3242 bytes result sent to driver
+21/09/13 06:47:05 INFO TaskSetManager: Starting task 62.0 in stage 8.0 (TID 95) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 87, PROCESS_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/13 06:47:05 INFO Executor: Running task 62.0 in stage 8.0 (TID 95)
+21/09/13 06:47:05 INFO TaskSetManager: Finished task 61.0 in stage 8.0 (TID 94) in 6 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (68/100)
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 1 ms
+21/09/13 06:47:05 INFO Executor: Finished task 62.0 in stage 8.0 (TID 95). 3199 bytes result sent to driver
+21/09/13 06:47:05 INFO TaskSetManager: Starting task 63.0 in stage 8.0 (TID 96) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 88, PROCESS_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/13 06:47:05 INFO Executor: Running task 63.0 in stage 8.0 (TID 96)
+21/09/13 06:47:05 INFO TaskSetManager: Finished task 62.0 in stage 8.0 (TID 95) in 7 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (69/100)
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+21/09/13 06:47:05 INFO Executor: Finished task 63.0 in stage 8.0 (TID 96). 3199 bytes result sent to driver
+21/09/13 06:47:05 INFO TaskSetManager: Starting task 64.0 in stage 8.0 (TID 97) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 89, PROCESS_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/13 06:47:05 INFO Executor: Running task 64.0 in stage 8.0 (TID 97)
+21/09/13 06:47:05 INFO TaskSetManager: Finished task 63.0 in stage 8.0 (TID 96) in 6 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (70/100)
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+21/09/13 06:47:05 INFO Executor: Finished task 64.0 in stage 8.0 (TID 97). 3242 bytes result sent to driver
+21/09/13 06:47:05 INFO TaskSetManager: Starting task 65.0 in stage 8.0 (TID 98) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 90, PROCESS_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/13 06:47:05 INFO TaskSetManager: Finished task 64.0 in stage 8.0 (TID 97) in 6 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (71/100)
+21/09/13 06:47:05 INFO Executor: Running task 65.0 in stage 8.0 (TID 98)
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+21/09/13 06:47:05 INFO Executor: Finished task 65.0 in stage 8.0 (TID 98). 3199 bytes result sent to driver
+21/09/13 06:47:05 INFO TaskSetManager: Starting task 66.0 in stage 8.0 (TID 99) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 91, PROCESS_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/13 06:47:05 INFO TaskSetManager: Finished task 65.0 in stage 8.0 (TID 98) in 7 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (72/100)
+21/09/13 06:47:05 INFO Executor: Running task 66.0 in stage 8.0 (TID 99)
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+21/09/13 06:47:05 INFO Executor: Finished task 66.0 in stage 8.0 (TID 99). 3199 bytes result sent to driver
+21/09/13 06:47:05 INFO TaskSetManager: Starting task 67.0 in stage 8.0 (TID 100) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 92, PROCESS_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/13 06:47:05 INFO Executor: Running task 67.0 in stage 8.0 (TID 100)
+21/09/13 06:47:05 INFO TaskSetManager: Finished task 66.0 in stage 8.0 (TID 99) in 6 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (73/100)
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+21/09/13 06:47:05 INFO Executor: Finished task 67.0 in stage 8.0 (TID 100). 3242 bytes result sent to driver
+21/09/13 06:47:05 INFO TaskSetManager: Starting task 68.0 in stage 8.0 (TID 101) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 93, PROCESS_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/13 06:47:05 INFO TaskSetManager: Finished task 67.0 in stage 8.0 (TID 100) in 4 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (74/100)
+21/09/13 06:47:05 INFO Executor: Running task 68.0 in stage 8.0 (TID 101)
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+21/09/13 06:47:05 INFO Executor: Finished task 68.0 in stage 8.0 (TID 101). 3199 bytes result sent to driver
+21/09/13 06:47:05 INFO TaskSetManager: Starting task 69.0 in stage 8.0 (TID 102) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 94, PROCESS_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/13 06:47:05 INFO TaskSetManager: Finished task 68.0 in stage 8.0 (TID 101) in 6 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (75/100)
+21/09/13 06:47:05 INFO Executor: Running task 69.0 in stage 8.0 (TID 102)
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+21/09/13 06:47:05 INFO Executor: Finished task 69.0 in stage 8.0 (TID 102). 3199 bytes result sent to driver
+21/09/13 06:47:05 INFO TaskSetManager: Starting task 70.0 in stage 8.0 (TID 103) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 95, PROCESS_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/13 06:47:05 INFO TaskSetManager: Finished task 69.0 in stage 8.0 (TID 102) in 5 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (76/100)
+21/09/13 06:47:05 INFO Executor: Running task 70.0 in stage 8.0 (TID 103)
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+21/09/13 06:47:05 INFO Executor: Finished task 70.0 in stage 8.0 (TID 103). 3242 bytes result sent to driver
+21/09/13 06:47:05 INFO TaskSetManager: Starting task 71.0 in stage 8.0 (TID 104) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 96, PROCESS_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/13 06:47:05 INFO TaskSetManager: Finished task 70.0 in stage 8.0 (TID 103) in 7 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (77/100)
+21/09/13 06:47:05 INFO Executor: Running task 71.0 in stage 8.0 (TID 104)
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+21/09/13 06:47:05 INFO Executor: Finished task 71.0 in stage 8.0 (TID 104). 3199 bytes result sent to driver
+21/09/13 06:47:05 INFO TaskSetManager: Starting task 72.0 in stage 8.0 (TID 105) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 97, PROCESS_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/13 06:47:05 INFO TaskSetManager: Finished task 71.0 in stage 8.0 (TID 104) in 6 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (78/100)
+21/09/13 06:47:05 INFO Executor: Running task 72.0 in stage 8.0 (TID 105)
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+21/09/13 06:47:05 INFO Executor: Finished task 72.0 in stage 8.0 (TID 105). 3199 bytes result sent to driver
+21/09/13 06:47:05 INFO TaskSetManager: Starting task 74.0 in stage 8.0 (TID 106) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 99, PROCESS_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/13 06:47:05 INFO TaskSetManager: Finished task 72.0 in stage 8.0 (TID 105) in 8 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (79/100)
+21/09/13 06:47:05 INFO Executor: Running task 74.0 in stage 8.0 (TID 106)
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+21/09/13 06:47:05 INFO Executor: Finished task 74.0 in stage 8.0 (TID 106). 3242 bytes result sent to driver
+21/09/13 06:47:05 INFO TaskSetManager: Starting task 75.0 in stage 8.0 (TID 107) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 100, PROCESS_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/13 06:47:05 INFO TaskSetManager: Finished task 74.0 in stage 8.0 (TID 106) in 5 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (80/100)
+21/09/13 06:47:05 INFO Executor: Running task 75.0 in stage 8.0 (TID 107)
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+21/09/13 06:47:05 INFO Executor: Finished task 75.0 in stage 8.0 (TID 107). 3199 bytes result sent to driver
+21/09/13 06:47:05 INFO TaskSetManager: Starting task 76.0 in stage 8.0 (TID 108) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 101, PROCESS_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/13 06:47:05 INFO TaskSetManager: Finished task 75.0 in stage 8.0 (TID 107) in 6 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (81/100)
+21/09/13 06:47:05 INFO Executor: Running task 76.0 in stage 8.0 (TID 108)
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+21/09/13 06:47:05 INFO Executor: Finished task 76.0 in stage 8.0 (TID 108). 3199 bytes result sent to driver
+21/09/13 06:47:05 INFO TaskSetManager: Starting task 77.0 in stage 8.0 (TID 109) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 102, PROCESS_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/13 06:47:05 INFO Executor: Running task 77.0 in stage 8.0 (TID 109)
+21/09/13 06:47:05 INFO TaskSetManager: Finished task 76.0 in stage 8.0 (TID 108) in 6 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (82/100)
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+21/09/13 06:47:05 INFO Executor: Finished task 77.0 in stage 8.0 (TID 109). 3242 bytes result sent to driver
+21/09/13 06:47:05 INFO TaskSetManager: Starting task 78.0 in stage 8.0 (TID 110) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 103, PROCESS_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/13 06:47:05 INFO TaskSetManager: Finished task 77.0 in stage 8.0 (TID 109) in 5 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (83/100)
+21/09/13 06:47:05 INFO Executor: Running task 78.0 in stage 8.0 (TID 110)
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+21/09/13 06:47:05 INFO Executor: Finished task 78.0 in stage 8.0 (TID 110). 3199 bytes result sent to driver
+21/09/13 06:47:05 INFO TaskSetManager: Starting task 79.0 in stage 8.0 (TID 111) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 104, PROCESS_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/13 06:47:05 INFO Executor: Running task 79.0 in stage 8.0 (TID 111)
+21/09/13 06:47:05 INFO TaskSetManager: Finished task 78.0 in stage 8.0 (TID 110) in 6 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (84/100)
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+21/09/13 06:47:05 INFO Executor: Finished task 79.0 in stage 8.0 (TID 111). 3199 bytes result sent to driver
+21/09/13 06:47:05 INFO TaskSetManager: Starting task 80.0 in stage 8.0 (TID 112) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 105, PROCESS_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/13 06:47:05 INFO TaskSetManager: Finished task 79.0 in stage 8.0 (TID 111) in 6 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (85/100)
+21/09/13 06:47:05 INFO Executor: Running task 80.0 in stage 8.0 (TID 112)
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+21/09/13 06:47:05 INFO Executor: Finished task 80.0 in stage 8.0 (TID 112). 3242 bytes result sent to driver
+21/09/13 06:47:05 INFO TaskSetManager: Starting task 81.0 in stage 8.0 (TID 113) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 106, PROCESS_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/13 06:47:05 INFO TaskSetManager: Finished task 80.0 in stage 8.0 (TID 112) in 5 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (86/100)
+21/09/13 06:47:05 INFO Executor: Running task 81.0 in stage 8.0 (TID 113)
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+21/09/13 06:47:05 INFO Executor: Finished task 81.0 in stage 8.0 (TID 113). 3242 bytes result sent to driver
+21/09/13 06:47:05 INFO TaskSetManager: Starting task 82.0 in stage 8.0 (TID 114) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 107, PROCESS_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/13 06:47:05 INFO TaskSetManager: Finished task 81.0 in stage 8.0 (TID 113) in 19 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (87/100)
+21/09/13 06:47:05 INFO Executor: Running task 82.0 in stage 8.0 (TID 114)
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+21/09/13 06:47:05 INFO Executor: Finished task 82.0 in stage 8.0 (TID 114). 3199 bytes result sent to driver
+21/09/13 06:47:05 INFO TaskSetManager: Starting task 83.0 in stage 8.0 (TID 115) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 108, PROCESS_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/13 06:47:05 INFO TaskSetManager: Finished task 82.0 in stage 8.0 (TID 114) in 5 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (88/100)
+21/09/13 06:47:05 INFO Executor: Running task 83.0 in stage 8.0 (TID 115)
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+21/09/13 06:47:05 INFO Executor: Finished task 83.0 in stage 8.0 (TID 115). 3199 bytes result sent to driver
+21/09/13 06:47:05 INFO TaskSetManager: Starting task 84.0 in stage 8.0 (TID 116) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 109, PROCESS_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/13 06:47:05 INFO TaskSetManager: Finished task 83.0 in stage 8.0 (TID 115) in 5 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (89/100)
+21/09/13 06:47:05 INFO Executor: Running task 84.0 in stage 8.0 (TID 116)
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+21/09/13 06:47:05 INFO Executor: Finished task 84.0 in stage 8.0 (TID 116). 3199 bytes result sent to driver
+21/09/13 06:47:05 INFO TaskSetManager: Starting task 85.0 in stage 8.0 (TID 117) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 110, PROCESS_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/13 06:47:05 INFO Executor: Running task 85.0 in stage 8.0 (TID 117)
+21/09/13 06:47:05 INFO TaskSetManager: Finished task 84.0 in stage 8.0 (TID 116) in 7 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (90/100)
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+21/09/13 06:47:05 INFO Executor: Finished task 85.0 in stage 8.0 (TID 117). 3199 bytes result sent to driver
+21/09/13 06:47:05 INFO TaskSetManager: Starting task 86.0 in stage 8.0 (TID 118) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 111, PROCESS_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/13 06:47:05 INFO TaskSetManager: Finished task 85.0 in stage 8.0 (TID 117) in 6 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (91/100)
+21/09/13 06:47:05 INFO Executor: Running task 86.0 in stage 8.0 (TID 118)
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+21/09/13 06:47:05 INFO Executor: Finished task 86.0 in stage 8.0 (TID 118). 3199 bytes result sent to driver
+21/09/13 06:47:05 INFO TaskSetManager: Starting task 88.0 in stage 8.0 (TID 119) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 113, PROCESS_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/13 06:47:05 INFO TaskSetManager: Finished task 86.0 in stage 8.0 (TID 118) in 5 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (92/100)
+21/09/13 06:47:05 INFO Executor: Running task 88.0 in stage 8.0 (TID 119)
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+21/09/13 06:47:05 INFO Executor: Finished task 88.0 in stage 8.0 (TID 119). 3199 bytes result sent to driver
+21/09/13 06:47:05 INFO TaskSetManager: Starting task 90.0 in stage 8.0 (TID 120) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 115, PROCESS_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/13 06:47:05 INFO TaskSetManager: Finished task 88.0 in stage 8.0 (TID 119) in 6 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (93/100)
+21/09/13 06:47:05 INFO Executor: Running task 90.0 in stage 8.0 (TID 120)
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+21/09/13 06:47:05 INFO Executor: Finished task 90.0 in stage 8.0 (TID 120). 3199 bytes result sent to driver
+21/09/13 06:47:05 INFO TaskSetManager: Starting task 92.0 in stage 8.0 (TID 121) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 117, PROCESS_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/13 06:47:05 INFO TaskSetManager: Finished task 90.0 in stage 8.0 (TID 120) in 6 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (94/100)
+21/09/13 06:47:05 INFO Executor: Running task 92.0 in stage 8.0 (TID 121)
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+21/09/13 06:47:05 INFO Executor: Finished task 92.0 in stage 8.0 (TID 121). 3199 bytes result sent to driver
+21/09/13 06:47:05 INFO TaskSetManager: Starting task 94.0 in stage 8.0 (TID 122) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 119, PROCESS_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/13 06:47:05 INFO Executor: Running task 94.0 in stage 8.0 (TID 122)
+21/09/13 06:47:05 INFO TaskSetManager: Finished task 92.0 in stage 8.0 (TID 121) in 5 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (95/100)
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+21/09/13 06:47:05 INFO Executor: Finished task 94.0 in stage 8.0 (TID 122). 3199 bytes result sent to driver
+21/09/13 06:47:05 INFO TaskSetManager: Starting task 95.0 in stage 8.0 (TID 123) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 120, PROCESS_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/13 06:47:05 INFO Executor: Running task 95.0 in stage 8.0 (TID 123)
+21/09/13 06:47:05 INFO TaskSetManager: Finished task 94.0 in stage 8.0 (TID 122) in 4 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (96/100)
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+21/09/13 06:47:05 INFO Executor: Finished task 95.0 in stage 8.0 (TID 123). 3199 bytes result sent to driver
+21/09/13 06:47:05 INFO TaskSetManager: Starting task 96.0 in stage 8.0 (TID 124) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 121, PROCESS_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/13 06:47:05 INFO TaskSetManager: Finished task 95.0 in stage 8.0 (TID 123) in 5 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (97/100)
+21/09/13 06:47:05 INFO Executor: Running task 96.0 in stage 8.0 (TID 124)
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+21/09/13 06:47:05 INFO Executor: Finished task 96.0 in stage 8.0 (TID 124). 3199 bytes result sent to driver
+21/09/13 06:47:05 INFO TaskSetManager: Starting task 97.0 in stage 8.0 (TID 125) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 122, PROCESS_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/13 06:47:05 INFO TaskSetManager: Finished task 96.0 in stage 8.0 (TID 124) in 5 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (98/100)
+21/09/13 06:47:05 INFO Executor: Running task 97.0 in stage 8.0 (TID 125)
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+21/09/13 06:47:05 INFO Executor: Finished task 97.0 in stage 8.0 (TID 125). 3199 bytes result sent to driver
+21/09/13 06:47:05 INFO TaskSetManager: Starting task 99.0 in stage 8.0 (TID 126) (LAPTOP-TN9MOJSU.mshome.net, executor driver, partition 124, PROCESS_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/13 06:47:05 INFO TaskSetManager: Finished task 97.0 in stage 8.0 (TID 125) in 5 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (99/100)
+21/09/13 06:47:05 INFO Executor: Running task 99.0 in stage 8.0 (TID 126)
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/13 06:47:05 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+21/09/13 06:47:05 INFO Executor: Finished task 99.0 in stage 8.0 (TID 126). 3199 bytes result sent to driver
+21/09/13 06:47:05 INFO TaskSetManager: Finished task 99.0 in stage 8.0 (TID 126) in 4 ms on LAPTOP-TN9MOJSU.mshome.net (executor driver) (100/100)
+21/09/13 06:47:05 INFO TaskSchedulerImpl: Removed TaskSet 8.0, whose tasks have all completed, from pool
+21/09/13 06:47:05 INFO DAGScheduler: ResultStage 8 (showString at <unknown>:0) finished in 0.983 s
+21/09/13 06:47:05 INFO DAGScheduler: Job 4 is finished. Cancelling potential speculative or zombie tasks for this job
+21/09/13 06:47:05 INFO TaskSchedulerImpl: Killing all running tasks in stage 8: Stage finished
+21/09/13 06:47:05 INFO DAGScheduler: Job 4 finished: showString at <unknown>:0, took 0.998811 s
+21/09/13 06:47:05 INFO CodeGenerator: Code generated in 11.1333 ms
++----------+------+--------+------------+------------+------------+
+|  trade_dt|symbol|exchange|    event_tm|event_seq_nb|trade_prices|
++----------+------+--------+------------+------------+------------+
+|2020-08-06|  SYMA|  NASDAQ|1.59677478E9|         100| [77.437195]|
+|2020-08-06|  SYMB|  NASDAQ| 1.5967735E9|         100|  [35.74627]|
+|2020-08-06|  SYMA|  NASDAQ|1.59675354E9|          50|  [77.62613]|
+|2020-08-06|  SYMC|  NASDAQ|1.59673587E9|          10| [158.81964]|
+|2020-08-06|  SYMA|  NASDAQ|1.59676621E9|          80|  [78.62379]|
+|2020-08-06|  SYMB|  NASDAQ|1.59676966E9|          90| [36.242912]|
+|2020-08-06|  SYMA|  NASDAQ|1.59674918E9|          40|  [75.84401]|
+|2020-08-06|  SYMC|  NASDAQ|1.59675302E9|          50| [160.83138]|
+|2020-08-06|  SYMC|  NASDAQ| 1.5967575E9|          60| [159.01698]|
+|2020-08-06|  SYMB|  NASDAQ|1.59676506E9|          80|  [32.23191]|
+|2020-08-06|  SYMC|  NASDAQ|1.59674445E9|          30| [160.12585]|
+|2020-08-06|  SYMC|  NASDAQ|1.59676557E9|          80| [159.06815]|
+|2020-08-06|  SYMB|  NASDAQ|1.59674854E9|          40| [31.892431]|
+|2020-08-06|  SYMB|  NASDAQ|1.59674432E9|          30|  [36.69707]|
+|2020-08-06|  SYMA|  NASDAQ|1.59675738E9|          60|  [77.57371]|
+|2020-08-06|  SYMC|  NASDAQ| 1.5967401E9|          20| [160.77866]|
+|2020-08-06|  SYMA|  NASDAQ|1.59677056E9|          90|  [77.81714]|
+|2020-08-06|  SYMC|  NASDAQ|1.59677389E9|         100| [156.83673]|
+|2020-08-06|  SYMC|  NASDAQ|1.59674854E9|          40|  [157.1403]|
+|2020-08-06|  SYMA|  NASDAQ|1.59676211E9|          70|  [76.97747]|
++----------+------+--------+------------+------------+------------+
+only showing top 20 rows
+
+21/09/13 06:47:06 INFO FileSourceStrategy: Pushed Filters:
+21/09/13 06:47:06 INFO FileSourceStrategy: Post-Scan Filters:
+21/09/13 06:47:06 INFO FileSourceStrategy: Output Data Schema: struct<trade_dt: date, symbol: string, event_tm: float, event_seq_nb: int, exchange: string ... 1 more field>
+Traceback (most recent call last):
+  File "C:/Users/cardo/PycharmProjects/SPRINGBOARD/Guided_Capstone/3_EOD_Data_Load/load_eod_data.py", line 19, in <module>
+    trade.write.parquet("path/trade/trade_dt={}".format(trade_date))
+  File "C:\spark\spark-3.1.2-bin-hadoop3.2\python\lib\pyspark.zip\pyspark\sql\readwriter.py", line 1250, in parquet
+  File "C:\spark\spark-3.1.2-bin-hadoop3.2\python\lib\py4j-0.10.9-src.zip\py4j\java_gateway.py", line 1304, in __call__
+  File "C:\spark\spark-3.1.2-bin-hadoop3.2\python\lib\pyspark.zip\pyspark\sql\utils.py", line 117, in deco
+pyspark.sql.utils.AnalysisException: path file:/C:/Users/cardo/PycharmProjects/SPRINGBOARD/path/trade/trade_dt=2020-07-29 already exists.
+21/09/13 06:47:06 INFO SparkUI: Stopped Spark web UI at http://LAPTOP-TN9MOJSU.mshome.net:4040
+21/09/13 06:47:06 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+21/09/13 06:47:06 INFO MemoryStore: MemoryStore cleared
+21/09/13 06:47:06 INFO BlockManager: BlockManager stopped
+21/09/13 06:47:06 INFO BlockManagerMaster: BlockManagerMaster stopped
+21/09/13 06:47:06 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+21/09/13 06:47:06 INFO SparkContext: Successfully stopped SparkContext
+21/09/13 06:47:06 INFO ShutdownHookManager: Shutdown hook called
+21/09/13 06:47:06 INFO ShutdownHookManager: Deleting directory C:\Users\cardo\AppData\Local\Temp\spark-b5ef2782-0c67-4f27-8fdb-15ac22484562\pyspark-1abce2d5-9d25-4393-b3a1-3341a5a04079
+21/09/13 06:47:06 INFO ShutdownHookManager: Deleting directory C:\Users\cardo\AppData\Local\Temp\spark-7c23927a-a393-4828-b20a-3bc7c63a643b
+21/09/13 06:47:06 INFO ShutdownHookManager: Deleting directory C:\Users\cardo\AppData\Local\Temp\spark-b5ef2782-0c67-4f27-8fdb-15ac22484562
