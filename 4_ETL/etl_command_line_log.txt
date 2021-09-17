@@ -1,0 +1,579 @@
+Microsoft Windows [Version 10.0.19043.1237]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\cardo>cd C:\Users\cardo\PycharmProjects\SPRINGBOARD\
+
+C:\Users\cardo\PycharmProjects\SPRINGBOARD>spark-submit Guided_Capstone\4_ETL\etl.py
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+21/09/17 09:44:12 INFO SparkContext: Running Spark version 3.1.2
+21/09/17 09:44:12 INFO ResourceUtils: ==============================================================
+21/09/17 09:44:12 INFO ResourceUtils: No custom resources configured for spark.driver.
+21/09/17 09:44:12 INFO ResourceUtils: ==============================================================
+21/09/17 09:44:12 INFO SparkContext: Submitted application: app
+21/09/17 09:44:12 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 1024, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+21/09/17 09:44:12 INFO ResourceProfile: Limiting resource is cpu
+21/09/17 09:44:12 INFO ResourceProfileManager: Added ResourceProfile id: 0
+21/09/17 09:44:12 INFO SecurityManager: Changing view acls to: cardo
+21/09/17 09:44:12 INFO SecurityManager: Changing modify acls to: cardo
+21/09/17 09:44:12 INFO SecurityManager: Changing modify acls groups to:
+21/09/17 09:44:12 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(cardo); groups with view permissions: Set(); users  with modify permissions: Set(cardo); groups with modify permissions: Set()
+21/09/17 09:44:12 INFO DAGScheduler: Job 1 finished: showString at <unknown>:0, took 0.418232 s
+21/09/17 09:44:12 INFO CodeGenerator: Code generated in 15.5906 ms
++----------+--------+------+--------+------------+------------+-----------+
+|  trade_dt|rec_type|symbol|exchange|    event_tm|event_seq_nb|trade_price|
++----------+--------+------+--------+------------+------------+-----------+
+|2020-08-06|       T|  SYMA|  NASDAQ|1.59673574E9|          10|   78.93246|
+|2020-08-06|       T|  SYMA|  NASDAQ|1.59674048E9|          20|    77.0967|
+|2020-08-06|       T|  SYMA|  NASDAQ|1.59674458E9|          30|   78.31462|
+|2020-08-06|       T|  SYMA|  NASDAQ|1.59674918E9|          40|   75.84401|
+|2020-08-06|       T|  SYMA|  NASDAQ|1.59675354E9|          50|   77.62613|
+|2020-08-06|       T|  SYMA|  NASDAQ|1.59675738E9|          60|   77.57371|
+|2020-08-06|       T|  SYMA|  NASDAQ|1.59676211E9|          70|   76.97747|
+|2020-08-06|       T|  SYMA|  NASDAQ|1.59676621E9|          80|   78.62379|
+|2020-08-06|       T|  SYMA|  NASDAQ|1.59677056E9|          90|   77.81714|
+|2020-08-06|       T|  SYMA|  NASDAQ|1.59677478E9|         100|  77.437195|
+|2020-08-06|       T|  SYMB|  NASDAQ|  1.596736E9|          10|   32.27114|
+|2020-08-06|       T|  SYMB|  NASDAQ|1.59674048E9|          20|   32.47082|
+|2020-08-06|       T|  SYMB|  NASDAQ|1.59674432E9|          30|   36.69707|
+|2020-08-06|       T|  SYMB|  NASDAQ|1.59674854E9|          40|  31.892431|
+|2020-08-06|       T|  SYMB|  NASDAQ|1.59675238E9|          50|  33.079117|
+|2020-08-06|       T|  SYMB|  NASDAQ|1.59675635E9|          60|   34.92868|
+|2020-08-06|       T|  SYMB|  NASDAQ| 1.5967607E9|          70|  35.856495|
+|2020-08-06|       T|  SYMB|  NASDAQ|1.59676506E9|          80|   32.23191|
+|2020-08-06|       T|  SYMB|  NASDAQ|1.59676966E9|          90|  36.242912|
+|2020-08-06|       T|  SYMB|  NASDAQ| 1.5967735E9|         100|   35.74627|
++----------+--------+------+--------+------------+------------+-----------+
+only showing top 20 rows
+21/09/17 09:44:12 INFO TaskSchedulerImpl: Killing all running tasks in stage 2: Stage finished
+21/09/17 09:44:12 INFO DAGScheduler: Job 2 finished: showString at <unknown>:0, took 0.077416 s
+21/09/17 09:44:12 INFO CodeGenerator: Code generated in 12.6864 ms
++----------+------+--------+------------+------------+-----------+
+|  trade_dt|symbol|exchange|    event_tm|event_seq_nb|trade_price|
++----------+------+--------+------------+------------+-----------+
+|2020-08-06|  SYMA|  NASDAQ|1.59673574E9|          10|   78.93246|
+|2020-08-06|  SYMA|  NASDAQ|1.59674048E9|          20|    77.0967|
+|2020-08-06|  SYMA|  NASDAQ|1.59674458E9|          30|   78.31462|
+|2020-08-06|  SYMA|  NASDAQ|1.59674918E9|          40|   75.84401|
+|2020-08-06|  SYMA|  NASDAQ|1.59675354E9|          50|   77.62613|
+|2020-08-06|  SYMA|  NASDAQ|1.59675738E9|          60|   77.57371|
+|2020-08-06|  SYMA|  NASDAQ|1.59676211E9|          70|   76.97747|
+|2020-08-06|  SYMA|  NASDAQ|1.59676621E9|          80|   78.62379|
+|2020-08-06|  SYMA|  NASDAQ|1.59677056E9|          90|   77.81714|
+|2020-08-06|  SYMA|  NASDAQ|1.59677478E9|         100|  77.437195|
+|2020-08-06|  SYMB|  NASDAQ|  1.596736E9|          10|   32.27114|
+|2020-08-06|  SYMB|  NASDAQ|1.59674048E9|          20|   32.47082|
+|2020-08-06|  SYMB|  NASDAQ|1.59674432E9|          30|   36.69707|
+|2020-08-06|  SYMB|  NASDAQ|1.59674854E9|          40|  31.892431|
+|2020-08-06|  SYMB|  NASDAQ|1.59675238E9|          50|  33.079117|
+|2020-08-06|  SYMB|  NASDAQ|1.59675635E9|          60|   34.92868|
+|2020-08-06|  SYMB|  NASDAQ| 1.5967607E9|          70|  35.856495|
+|2020-08-06|  SYMB|  NASDAQ|1.59676506E9|          80|   32.23191|
+|2020-08-06|  SYMB|  NASDAQ|1.59676966E9|          90|  36.242912|
+|2020-08-06|  SYMB|  NASDAQ| 1.5967735E9|         100|   35.74627|
++----------+------+--------+------------+------------+-----------+
+only showing top 20 rows
+21/09/17 09:44:12 INFO Executor: Finished task 11.0 in stage 20.0 (TID 373). 3305 bytes result sent to driver
+21/09/17 09:44:12 INFO TaskSetManager: Finished task 11.0 in stage 20.0 (TID 373) in 0 ms on host.docker.internal (executor driver) (12/12)
+21/09/17 09:44:12 INFO TaskSchedulerImpl: Removed TaskSet 20.0, whose tasks have all completed, from pool
+21/09/17 09:44:12 INFO DAGScheduler: ResultStage 20 (showString at <unknown>:0) finished in 0.100 s
+21/09/17 09:44:12 INFO DAGScheduler: Job 11 is finished. Cancelling potential speculative or zombie tasks for this job
+21/09/17 09:44:12 INFO TaskSchedulerImpl: Killing all running tasks in stage 20: Stage finished
+21/09/17 09:44:12 INFO DAGScheduler: Job 11 finished: showString at <unknown>:0, took 0.108102 s
++----------+------+--------+------------+------------+-----------+------------------+
+|  trade_dt|symbol|exchange|    event_tm|event_seq_nb|trade_price|        mov_avg_pr|
++----------+------+--------+------------+------------+-----------+------------------+
+|2020-08-06|  SYMA|  NASDAQ|1.59673574E9|          10|   78.93246| 78.93245697021484|
+|2020-08-06|  SYMA|  NASDAQ|1.59674048E9|          20|    77.0967|  77.0967025756836|
+|2020-08-06|  SYMA|  NASDAQ|1.59674458E9|          30|   78.31462| 78.31462097167969|
+|2020-08-06|  SYMA|  NASDAQ|1.59674918E9|          40|   75.84401| 75.84400939941406|
+|2020-08-06|  SYMA|  NASDAQ|1.59675354E9|          50|   77.62613| 77.62612915039062|
+|2020-08-06|  SYMA|  NASDAQ|1.59675738E9|          60|   77.57371|  77.5737075805664|
+|2020-08-06|  SYMA|  NASDAQ|1.59676211E9|          70|   76.97747| 76.97747039794922|
+|2020-08-06|  SYMA|  NASDAQ|1.59676621E9|          80|   78.62379| 78.62378692626953|
+|2020-08-06|  SYMA|  NASDAQ|1.59677056E9|          90|   77.81714|   77.817138671875|
+|2020-08-06|  SYMA|  NASDAQ|1.59677478E9|         100|  77.437195| 77.43719482421875|
+|2020-08-06|  SYMB|  NASDAQ|  1.596736E9|          10|   32.27114|32.271141052246094|
+|2020-08-06|  SYMB|  NASDAQ|1.59674048E9|          20|   32.47082|32.470821380615234|
+|2020-08-06|  SYMB|  NASDAQ|1.59674432E9|          30|   36.69707| 36.69707107543945|
+|2020-08-06|  SYMB|  NASDAQ|1.59674854E9|          40|  31.892431|31.892431259155273|
+|2020-08-06|  SYMB|  NASDAQ|1.59675238E9|          50|  33.079117| 33.07911682128906|
+|2020-08-06|  SYMB|  NASDAQ|1.59675635E9|          60|   34.92868|34.928680419921875|
+|2020-08-06|  SYMB|  NASDAQ| 1.5967607E9|          70|  35.856495| 35.85649490356445|
+|2020-08-06|  SYMB|  NASDAQ|1.59676506E9|          80|   32.23191|32.231910705566406|
+|2020-08-06|  SYMB|  NASDAQ|1.59676966E9|          90|  36.242912| 36.24291229248047|
+|2020-08-06|  SYMB|  NASDAQ| 1.5967735E9|         100|   35.74627| 35.74626922607422|
++----------+------+--------+------------+------------+-----------+------------------+
+only showing top 20 rows
+21/09/17 09:44:13 INFO DAGScheduler: waiting: Set(ResultStage 23)
+21/09/17 09:44:13 INFO DAGScheduler: failed: Set()
+21/09/17 09:44:13 INFO DAGScheduler: Submitting ResultStage 23 (MapPartitionsRDD[40] at saveAsTable at <unknown>:0), which has no missing parents
+21/09/17 09:44:13 INFO MemoryStore: Block broadcast_22 stored as values in memory (estimated size 194.6 KiB, free 364.1 MiB)
+21/09/17 09:44:13 INFO MemoryStore: Block broadcast_22_piece0 stored as bytes in memory (estimated size 71.2 KiB, free 364.0 MiB)
+21/09/17 09:44:13 INFO BlockManagerInfo: Added broadcast_22_piece0 in memory on host.docker.internal:51460 (size: 71.2 KiB, free: 366.0 MiB)
+21/09/17 09:44:13 INFO SparkContext: Created broadcast 22 from broadcast at DAGScheduler.scala:1388
+21/09/17 09:44:13 INFO DAGScheduler: Submitting 200 missing tasks from ResultStage 23 (MapPartitionsRDD[40] at saveAsTable at <unknown>:0) (first 15 tasks are for partitions Vector(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14))
+21/09/17 09:44:13 INFO TaskSchedulerImpl: Adding task set 23.0 with 200 tasks resource profile 0
+21/09/17 09:44:13 INFO TaskSetManager: Starting task 31.0 in stage 23.0 (TID 376) (host.docker.internal, executor driver, partition 31, NODE_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/17 09:44:13 INFO Executor: Running task 31.0 in stage 23.0 (TID 376)
+21/09/17 09:44:13 INFO ShuffleBlockFetcherIterator: Getting 1 (368.0 B) non-empty blocks including 1 (368.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/17 09:44:13 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+21/09/17 09:44:13 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+21/09/17 09:44:13 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+21/09/17 09:44:13 INFO SQLHadoopMapReduceCommitProtocol: Using user defined output committer class org.apache.parquet.hadoop.ParquetOutputCommitter
+21/09/17 09:44:13 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+21/09/17 09:44:13 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+21/09/17 09:44:13 INFO SQLHadoopMapReduceCommitProtocol: Using output committer class org.apache.parquet.hadoop.ParquetOutputCommitter
+21/09/17 09:44:13 INFO CodecConfig: Compression: SNAPPY
+21/09/17 09:44:13 INFO CodecConfig: Compression: SNAPPY
+21/09/17 09:44:13 INFO ParquetOutputFormat: Parquet block size to 134217728
+21/09/17 09:44:13 INFO ParquetOutputFormat: Parquet page size to 1048576
+21/09/17 09:44:13 INFO ParquetOutputFormat: Parquet dictionary page size to 1048576
+21/09/17 09:44:13 INFO ParquetOutputFormat: Dictionary is on
+21/09/17 09:44:13 INFO ParquetOutputFormat: Validation is off
+21/09/17 09:44:13 INFO ParquetOutputFormat: Writer version is: PARQUET_1_0
+21/09/17 09:44:13 INFO ParquetOutputFormat: Maximum row group padding size is 8388608 bytes
+21/09/17 09:44:13 INFO ParquetOutputFormat: Page size checking is: estimated
+21/09/17 09:44:13 INFO ParquetOutputFormat: Min row count for page size check is: 100
+21/09/17 09:44:13 INFO ParquetOutputFormat: Max row count for page size check is: 10000
+21/09/17 09:44:13 INFO ParquetWriteSupport: Initialized Parquet WriteSupport with Catalyst schema:
+{
+  "type" : "struct",
+  "fields" : [ {
+    "name" : "trade_dt",
+    "type" : "date",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "symbol",
+    "type" : "string",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "exchange",
+    "type" : "string",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "event_tm",
+    "type" : "float",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "event_seq_nb",
+    "type" : "integer",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "last_pr",
+    "type" : "double",
+    "nullable" : true,
+    "metadata" : { }
+  } ]
+}
+and corresponding Parquet message type:
+message spark_schema {
+  optional int32 trade_dt (DATE);
+  optional binary symbol (UTF8);
+  optional binary exchange (UTF8);
+  optional float event_tm;
+  optional int32 event_seq_nb;
+  optional double last_pr;
+}
+
+
+21/09/17 09:44:13 INFO InternalParquetRecordWriter: Flushing mem columnStore to file. allocated memory: 422
+21/09/17 09:44:13 INFO FileOutputCommitter: Saved output of task 'attempt_20210917094412294405267881214954_0023_m_000031_376' to file:/C:/Users/cardo/PycharmProjects/SPRINGBOARD/spark-warehouse/temp_last_trade/_temporary/0/task_20210917094412294405267881214954_0023_m_000031
+21/09/17 09:44:13 INFO SparkHadoopMapRedUtil: attempt_20210917094412294405267881214954_0023_m_000031_376: Committed
+21/09/17 09:44:13 INFO Executor: Finished task 31.0 in stage 23.0 (TID 376). 4354 bytes result sent to driver
+21/09/17 09:44:13 INFO TaskSetManager: Starting task 75.0 in stage 23.0 (TID 377) (host.docker.internal, executor driver, partition 75, NODE_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/17 09:44:13 INFO Executor: Running task 75.0 in stage 23.0 (TID 377)
+21/09/17 09:44:13 INFO TaskSetManager: Finished task 31.0 in stage 23.0 (TID 376) in 31 ms on host.docker.internal (executor driver) (1/200)
+21/09/17 09:44:13 INFO ShuffleBlockFetcherIterator: Getting 1 (368.0 B) non-empty blocks including 1 (368.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/17 09:44:13 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+21/09/17 09:44:13 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+21/09/17 09:44:13 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+21/09/17 09:44:13 INFO SQLHadoopMapReduceCommitProtocol: Using user defined output committer class org.apache.parquet.hadoop.ParquetOutputCommitter
+21/09/17 09:44:13 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+21/09/17 09:44:13 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+21/09/17 09:44:13 INFO SQLHadoopMapReduceCommitProtocol: Using output committer class org.apache.parquet.hadoop.ParquetOutputCommitter
+21/09/17 09:44:13 INFO CodecConfig: Compression: SNAPPY
+21/09/17 09:44:13 INFO CodecConfig: Compression: SNAPPY
+21/09/17 09:44:13 INFO ParquetOutputFormat: Parquet block size to 134217728
+21/09/17 09:44:13 INFO ParquetOutputFormat: Parquet page size to 1048576
+21/09/17 09:44:13 INFO ParquetOutputFormat: Parquet dictionary page size to 1048576
+21/09/17 09:44:13 INFO ParquetOutputFormat: Dictionary is on
+21/09/17 09:44:13 INFO ParquetOutputFormat: Validation is off
+21/09/17 09:44:13 INFO ParquetOutputFormat: Writer version is: PARQUET_1_0
+21/09/17 09:44:13 INFO ParquetOutputFormat: Maximum row group padding size is 8388608 bytes
+21/09/17 09:44:13 INFO ParquetOutputFormat: Page size checking is: estimated
+21/09/17 09:44:13 INFO ParquetOutputFormat: Min row count for page size check is: 100
+21/09/17 09:44:13 INFO ParquetOutputFormat: Max row count for page size check is: 10000
+21/09/17 09:44:13 INFO ParquetWriteSupport: Initialized Parquet WriteSupport with Catalyst schema:
+{
+  "type" : "struct",
+  "fields" : [ {
+    "name" : "trade_dt",
+    "type" : "date",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "symbol",
+    "type" : "string",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "exchange",
+    "type" : "string",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "event_tm",
+    "type" : "float",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "event_seq_nb",
+    "type" : "integer",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "last_pr",
+    "type" : "double",
+    "nullable" : true,
+    "metadata" : { }
+  } ]
+}
+and corresponding Parquet message type:
+message spark_schema {
+  optional int32 trade_dt (DATE);
+  optional binary symbol (UTF8);
+  optional binary exchange (UTF8);
+  optional float event_tm;
+  optional int32 event_seq_nb;
+  optional double last_pr;
+}
+
+
+21/09/17 09:44:13 INFO InternalParquetRecordWriter: Flushing mem columnStore to file. allocated memory: 422
+21/09/17 09:44:13 INFO FileOutputCommitter: Saved output of task 'attempt_20210917094412307404604628810256_0023_m_000075_377' to file:/C:/Users/cardo/PycharmProjects/SPRINGBOARD/spark-warehouse/temp_last_trade/_temporary/0/task_20210917094412307404604628810256_0023_m_000075
+21/09/17 09:44:13 INFO SparkHadoopMapRedUtil: attempt_20210917094412307404604628810256_0023_m_000075_377: Committed
+21/09/17 09:44:13 INFO Executor: Finished task 75.0 in stage 23.0 (TID 377). 4354 bytes result sent to driver
+21/09/17 09:44:13 INFO TaskSetManager: Starting task 161.0 in stage 23.0 (TID 378) (host.docker.internal, executor driver, partition 161, NODE_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/17 09:44:13 INFO TaskSetManager: Finished task 75.0 in stage 23.0 (TID 377) in 31 ms on host.docker.internal (executor driver) (2/200)
+21/09/17 09:44:13 INFO Executor: Running task 161.0 in stage 23.0 (TID 378)
+21/09/17 09:44:13 INFO ShuffleBlockFetcherIterator: Getting 1 (368.0 B) non-empty blocks including 1 (368.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/17 09:44:13 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+21/09/17 09:44:13 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+21/09/17 09:44:13 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+21/09/17 09:44:13 INFO SQLHadoopMapReduceCommitProtocol: Using user defined output committer class org.apache.parquet.hadoop.ParquetOutputCommitter
+21/09/17 09:44:13 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+21/09/17 09:44:13 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+21/09/17 09:44:13 INFO SQLHadoopMapReduceCommitProtocol: Using output committer class org.apache.parquet.hadoop.ParquetOutputCommitter
+21/09/17 09:44:13 INFO CodecConfig: Compression: SNAPPY
+21/09/17 09:44:13 INFO CodecConfig: Compression: SNAPPY
+21/09/17 09:44:13 INFO ParquetOutputFormat: Parquet block size to 134217728
+21/09/17 09:44:13 INFO ParquetOutputFormat: Parquet page size to 1048576
+21/09/17 09:44:13 INFO ParquetOutputFormat: Parquet dictionary page size to 1048576
+21/09/17 09:44:13 INFO ParquetOutputFormat: Dictionary is on
+21/09/17 09:44:13 INFO ParquetOutputFormat: Validation is off
+21/09/17 09:44:13 INFO ParquetOutputFormat: Writer version is: PARQUET_1_0
+21/09/17 09:44:13 INFO ParquetOutputFormat: Maximum row group padding size is 8388608 bytes
+21/09/17 09:44:13 INFO ParquetOutputFormat: Page size checking is: estimated
+21/09/17 09:44:13 INFO ParquetOutputFormat: Min row count for page size check is: 100
+21/09/17 09:44:13 INFO ParquetOutputFormat: Max row count for page size check is: 10000
+21/09/17 09:44:13 INFO ParquetWriteSupport: Initialized Parquet WriteSupport with Catalyst schema:
+{
+  "type" : "struct",
+  "fields" : [ {
+    "name" : "trade_dt",
+    "type" : "date",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "symbol",
+    "type" : "string",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "exchange",
+    "type" : "string",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "event_tm",
+    "type" : "float",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "event_seq_nb",
+    "type" : "integer",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "last_pr",
+    "type" : "double",
+    "nullable" : true,
+    "metadata" : { }
+  } ]
+}
+and corresponding Parquet message type:
+message spark_schema {
+  optional int32 trade_dt (DATE);
+  optional binary symbol (UTF8);
+  optional binary exchange (UTF8);
+  optional float event_tm;
+  optional int32 event_seq_nb;
+  optional double last_pr;
+}
+
+
+21/09/17 09:44:13 INFO InternalParquetRecordWriter: Flushing mem columnStore to file. allocated memory: 422
+21/09/17 09:44:13 INFO FileOutputCommitter: Saved output of task 'attempt_202109170944124110960147262001723_0023_m_000161_378' to file:/C:/Users/cardo/PycharmProjects/SPRINGBOARD/spark-warehouse/temp_last_trade/_temporary/0/task_202109170944124110960147262001723_0023_m_000161
+21/09/17 09:44:13 INFO SparkHadoopMapRedUtil: attempt_202109170944124110960147262001723_0023_m_000161_378: Committed
+21/09/17 09:44:13 INFO Executor: Finished task 161.0 in stage 23.0 (TID 378). 4397 bytes result sent to driver
+21/09/17 09:44:13 INFO TaskSetManager: Starting task 0.0 in stage 23.0 (TID 379) (host.docker.internal, executor driver, partition 0, PROCESS_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/17 09:44:13 INFO Executor: Running task 0.0 in stage 23.0 (TID 379)
+21/09/17 09:44:13 INFO TaskSetManager: Finished task 161.0 in stage 23.0 (TID 378) in 38 ms on host.docker.internal (executor driver) (3/200)
+21/09/17 09:44:13 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/17 09:44:13 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+21/09/17 09:44:13 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+21/09/17 09:44:13 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+21/09/17 09:44:13 INFO SQLHadoopMapReduceCommitProtocol: Using user defined output committer class org.apache.parquet.hadoop.ParquetOutputCommitter
+21/09/17 09:44:13 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+21/09/17 09:44:13 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+21/09/17 09:44:13 INFO SQLHadoopMapReduceCommitProtocol: Using output committer class org.apache.parquet.hadoop.ParquetOutputCommitter
+21/09/17 09:44:13 INFO CodecConfig: Compression: SNAPPY
+21/09/17 09:44:13 INFO CodecConfig: Compression: SNAPPY
+21/09/17 09:44:13 INFO ParquetOutputFormat: Parquet block size to 134217728
+21/09/17 09:44:13 INFO ParquetOutputFormat: Parquet page size to 1048576
+21/09/17 09:44:13 INFO ParquetOutputFormat: Parquet dictionary page size to 1048576
+21/09/17 09:44:13 INFO ParquetOutputFormat: Dictionary is on
+21/09/17 09:44:13 INFO ParquetOutputFormat: Validation is off
+21/09/17 09:44:13 INFO ParquetOutputFormat: Writer version is: PARQUET_1_0
+21/09/17 09:44:13 INFO ParquetOutputFormat: Maximum row group padding size is 8388608 bytes
+21/09/17 09:44:13 INFO ParquetOutputFormat: Page size checking is: estimated
+21/09/17 09:44:13 INFO ParquetOutputFormat: Min row count for page size check is: 100
+21/09/17 09:44:13 INFO ParquetOutputFormat: Max row count for page size check is: 10000
+21/09/17 09:44:13 INFO ParquetWriteSupport: Initialized Parquet WriteSupport with Catalyst schema:
+{
+  "type" : "struct",
+  "fields" : [ {
+    "name" : "trade_dt",
+    "type" : "date",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "symbol",
+    "type" : "string",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "exchange",
+    "type" : "string",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "event_tm",
+    "type" : "float",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "event_seq_nb",
+    "type" : "integer",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "last_pr",
+    "type" : "double",
+    "nullable" : true,
+    "metadata" : { }
+  } ]
+}
+and corresponding Parquet message type:
+message spark_schema {
+  optional int32 trade_dt (DATE);
+  optional binary symbol (UTF8);
+  optional binary exchange (UTF8);
+  optional float event_tm;
+  optional int32 event_seq_nb;
+  optional double last_pr;
+}
+
+21/09/17 09:44:13 INFO InternalParquetRecordWriter: Flushing mem columnStore to file. allocated memory: 0
+21/09/17 09:44:13 INFO FileOutputCommitter: Saved output of task 'attempt_202109170944122938784129128183384_0023_m_000000_379' to file:/C:/Users/cardo/PycharmProjects/SPRINGBOARD/spark-warehouse/temp_last_trade/_temporary/0/task_202109170944122938784129128183384_0023_m_000000
+21/09/17 09:44:13 INFO SparkHadoopMapRedUtil: attempt_202109170944122938784129128183384_0023_m_000000_379: Committed
+21/09/17 09:44:13 INFO Executor: Finished task 0.0 in stage 23.0 (TID 379). 4268 bytes result sent to driver
+21/09/17 09:44:13 INFO TaskSetManager: Starting task 1.0 in stage 23.0 (TID 380) (host.docker.internal, executor driver, partition 1, PROCESS_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/17 09:44:13 INFO Executor: Running task 1.0 in stage 23.0 (TID 380)
+21/09/17 09:44:13 INFO TaskSetManager: Finished task 0.0 in stage 23.0 (TID 379) in 31 ms on host.docker.internal (executor driver) (4/200)
+21/09/17 09:44:13 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/17 09:44:13 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+21/09/17 09:44:13 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+21/09/17 09:44:13 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+21/09/17 09:44:13 INFO SQLHadoopMapReduceCommitProtocol: Using user defined output committer class org.apache.parquet.hadoop.ParquetOutputCommitter
+21/09/17 09:44:13 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+21/09/17 09:44:13 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+21/09/17 09:44:13 INFO SQLHadoopMapReduceCommitProtocol: Using output committer class org.apache.parquet.hadoop.ParquetOutputCommitter
+21/09/17 09:44:13 INFO SparkHadoopMapRedUtil: No need to commit output of task because needsTaskCommit=false: attempt_202109170944121102142374409969042_0023_m_000001_380
+21/09/17 09:44:17 INFO TaskSetManager: Finished task 11.0 in stage 39.0 (TID 745) in 0 ms on host.docker.internal (executor driver) (12/12)
+21/09/17 09:44:17 INFO TaskSchedulerImpl: Removed TaskSet 39.0, whose tasks have all completed, from pool
+21/09/17 09:44:17 INFO DAGScheduler: ResultStage 39 (showString at <unknown>:0) finished in 0.071 s
+21/09/17 09:44:17 INFO DAGScheduler: Job 21 is finished. Cancelling potential speculative or zombie tasks for this job
+21/09/17 09:44:17 INFO TaskSchedulerImpl: Killing all running tasks in stage 39: Stage finished
+21/09/17 09:44:17 INFO DAGScheduler: Job 21 finished: showString at <unknown>:0, took 0.079821 s
++----------+------+--------+------------+------------+------------------+
+|  trade_dt|symbol|exchange|    event_tm|event_seq_nb|           last_pr|
++----------+------+--------+------------+------------+------------------+
+|2020-08-06|  SYMA|  NASDAQ|1.59673574E9|          10| 78.93245697021484|
+|2020-08-06|  SYMA|  NASDAQ|1.59674048E9|          20|  77.0967025756836|
+|2020-08-06|  SYMA|  NASDAQ|1.59674458E9|          30| 78.31462097167969|
+|2020-08-06|  SYMA|  NASDAQ|1.59674918E9|          40| 75.84400939941406|
+|2020-08-06|  SYMA|  NASDAQ|1.59675354E9|          50| 77.62612915039062|
+|2020-08-06|  SYMA|  NASDAQ|1.59675738E9|          60|  77.5737075805664|
+|2020-08-06|  SYMA|  NASDAQ|1.59676211E9|          70| 76.97747039794922|
+|2020-08-06|  SYMA|  NASDAQ|1.59676621E9|          80| 78.62378692626953|
+|2020-08-06|  SYMA|  NASDAQ|1.59677056E9|          90|   77.817138671875|
+|2020-08-06|  SYMA|  NASDAQ|1.59677478E9|         100| 77.43719482421875|
+|2020-08-06|  SYMB|  NASDAQ|  1.596736E9|          10|32.271141052246094|
+|2020-08-06|  SYMB|  NASDAQ|1.59674048E9|          20|32.470821380615234|
+|2020-08-06|  SYMB|  NASDAQ|1.59674432E9|          30| 36.69707107543945|
+|2020-08-06|  SYMB|  NASDAQ|1.59674854E9|          40|31.892431259155273|
+|2020-08-06|  SYMB|  NASDAQ|1.59675238E9|          50| 33.07911682128906|
+|2020-08-06|  SYMB|  NASDAQ|1.59675635E9|          60|34.928680419921875|
+|2020-08-06|  SYMB|  NASDAQ| 1.5967607E9|          70| 35.85649490356445|
+|2020-08-06|  SYMB|  NASDAQ|1.59676506E9|          80|32.231910705566406|
+|2020-08-06|  SYMB|  NASDAQ|1.59676966E9|          90| 36.24291229248047|
+|2020-08-06|  SYMB|  NASDAQ| 1.5967735E9|         100| 35.74626922607422|
++----------+------+--------+------------+------------+------------------+
+only showing top 20 rows
+
+21/09/17 09:44:17 INFO InMemoryFileIndex: It took 2 ms to list leaf files for 1 paths.
+21/09/17 09:44:17 INFO SparkContext: Starting job: parquet at <unknown>:0
+21/09/17 09:44:17 INFO DAGScheduler: Job 23 is finished. Cancelling potential speculative or zombie tasks for this job
+21/09/17 09:44:17 INFO TaskSchedulerImpl: Killing all running tasks in stage 41: Stage finished
+21/09/17 09:44:17 INFO DAGScheduler: Job 23 finished: showString at <unknown>:0, took 0.026581 s
+21/09/17 09:44:17 INFO CodeGenerator: Code generated in 7.802401 ms
++----------+--------+------+------------+------------+--------+---------+--------+---------+--------+-----------+----------+
+|  trade_dt|rec_type|symbol|    event_tm|event_seq_nb|exchange|bid_price|bid_size|ask_price|ask_size|trade_price|mov_avg_pr|
++----------+--------+------+------------+------------+--------+---------+--------+---------+--------+-----------+----------+
+|2020-08-06|       Q|  SYMA| 1.5967319E9|           1|  NASDAQ|78.133705|     100|79.825165|     100|       null|      null|
+|2020-08-06|       Q|  SYMA|1.59673242E9|           2|  NASDAQ| 76.52305|     100| 76.57241|     100|       null|      null|
+|2020-08-06|       Q|  SYMA|1.59673267E9|           3|  NASDAQ| 78.74535|     100|  79.0928|     100|       null|      null|
+|2020-08-06|       Q|  SYMA|1.59673318E9|           4|  NASDAQ|75.613625|     100|76.949776|     100|       null|      null|
+|2020-08-06|       Q|  SYMA| 1.5967337E9|           5|  NASDAQ| 77.45084|     100|78.725334|     100|       null|      null|
+|2020-08-06|       Q|  SYMA|1.59673408E9|           6|  NASDAQ| 79.29842|     100|81.071915|     100|       null|      null|
+|2020-08-06|       Q|  SYMA|1.59673459E9|           7|  NASDAQ| 77.76145|     100| 79.24523|     100|       null|      null|
+|2020-08-06|       Q|  SYMA|1.59673498E9|           8|  NASDAQ|75.601135|     100| 76.95535|     100|       null|      null|
+|2020-08-06|       Q|  SYMA|1.59673536E9|           9|  NASDAQ| 76.30005|     100|77.618706|     100|       null|      null|
+|2020-08-06|       Q|  SYMA|1.59673626E9|          11|  NASDAQ| 77.96207|     100| 79.18113|     100|       null|      null|
+|2020-08-06|       Q|  SYMA|1.59673677E9|          12|  NASDAQ|76.279816|     100| 77.32987|     100|       null|      null|
+|2020-08-06|       Q|  SYMA|1.59673715E9|          13|  NASDAQ| 78.76234|     100| 79.92418|     100|       null|      null|
+|2020-08-06|       Q|  SYMA|1.59673766E9|          14|  NASDAQ|79.196526|     100|80.117584|     100|       null|      null|
+|2020-08-06|       Q|  SYMA|1.59673818E9|          15|  NASDAQ| 74.83831|     100|76.313354|     100|       null|      null|
+|2020-08-06|       Q|  SYMA|1.59673882E9|          16|  NASDAQ| 76.65085|     100| 77.56526|     100|       null|      null|
+|2020-08-06|       Q|  SYMA| 1.5967392E9|          17|  NASDAQ|75.345146|     100| 76.79113|     100|       null|      null|
+|2020-08-06|       Q|  SYMA|1.59673971E9|          18|  NASDAQ| 75.37165|     100|76.572685|     100|       null|      null|
+|2020-08-06|       Q|  SYMA| 1.5967401E9|          19|  NASDAQ| 75.16338|     100|75.755356|     100|       null|      null|
+|2020-08-06|       Q|  SYMA|1.59674086E9|          21|  NASDAQ| 75.25071|     100|76.894264|     100|       null|      null|
+|2020-08-06|       Q|  SYMA|1.59674138E9|          22|  NASDAQ| 77.74453|     100|78.667305|     100|       null|      null|
++----------+--------+------+------------+------------+--------+---------+--------+---------+--------+-----------+----------+
+only showing top 20 rows
+
+21/09/17 09:44:19 INFO DAGScheduler: Job 27 is finished. Cancelling potential speculative or zombie tasks for this job
+21/09/17 09:44:19 INFO TaskSchedulerImpl: Killing all running tasks in stage 49: Stage finished
+21/09/17 09:44:19 INFO DAGScheduler: Job 27 finished: showString at <unknown>:0, took 0.619361 s
+21/09/17 09:44:19 INFO CodeGenerator: Code generated in 9.185001 ms
++----------+--------+------+------------+------------+--------+---------+--------+---------+--------+-----------+------------------+----------------+------------------+
+|  trade_dt|rec_type|symbol|    event_tm|event_seq_nb|exchange|bid_price|bid_size|ask_price|ask_size|trade_price|        mov_avg_pr|last_trade_price|   last_mov_avg_pr|
++----------+--------+------+------------+------------+--------+---------+--------+---------+--------+-----------+------------------+----------------+------------------+
+|2020-08-06|       Q|  SYMC|1.59673178E9|           1|  NASDAQ|161.59868|     100|162.28949|     100|       null|              null|            null|              null|
+|2020-08-06|       Q|  SYMC|1.59673216E9|           2|  NASDAQ|160.68784|     100|162.11844|     100|       null|              null|            null|              null|
+|2020-08-06|       Q|  SYMC|1.59673242E9|           3|  NASDAQ|159.62982|     100|160.24484|     100|       null|              null|            null|              null|
+|2020-08-06|       Q|  SYMC|1.59673293E9|           4|  NASDAQ| 160.3224|     100|162.12082|     100|       null|              null|            null|              null|
+|2020-08-06|       Q|  SYMC|1.59673344E9|           5|  NASDAQ|156.92099|     100|157.10406|     100|       null|              null|            null|              null|
+|2020-08-06|       Q|  SYMC|1.59673408E9|           6|  NASDAQ|161.45805|     100|163.41843|     100|       null|              null|            null|              null|
+|2020-08-06|       Q|  SYMC|1.59673459E9|           7|  NASDAQ|158.89891|     100|160.34264|     100|       null|              null|            null|              null|
+|2020-08-06|       Q|  SYMC|1.59673485E9|           8|  NASDAQ| 159.8666|     100|159.92308|     100|       null|              null|            null|              null|
+|2020-08-06|       Q|  SYMC|1.59673536E9|           9|  NASDAQ|161.48058|     100| 162.0072|     100|       null|              null|            null|              null|
+|2020-08-06|       T|  SYMC|1.59673587E9|          10|  NASDAQ|     null|    null|     null|    null|  158.81964|158.81964111328125|       158.81964|158.81964111328125|
+|2020-08-06|       Q|  SYMC|1.59673638E9|          11|  NASDAQ|158.67136|     100|160.61841|     100|       null|              null|       158.81964|158.81964111328125|
+|2020-08-06|       Q|  SYMC| 1.5967369E9|          12|  NASDAQ|161.09976|     100|161.82758|     100|       null|              null|       158.81964|158.81964111328125|
+|2020-08-06|       Q|  SYMC|1.59673728E9|          13|  NASDAQ|158.26437|     100| 160.1126|     100|       null|              null|       158.81964|158.81964111328125|
+|2020-08-06|       Q|  SYMC|1.59673779E9|          14|  NASDAQ|159.14417|     100|160.42744|     100|       null|              null|       158.81964|158.81964111328125|
+|2020-08-06|       Q|  SYMC|1.59673818E9|          15|  NASDAQ|161.59192|     100|162.35564|     100|       null|              null|       158.81964|158.81964111328125|
+|2020-08-06|       Q|  SYMC|1.59673856E9|          16|  NASDAQ|158.32402|     100|159.65079|     100|       null|              null|       158.81964|158.81964111328125|
+|2020-08-06|       Q|  SYMC|1.59673907E9|          17|  NASDAQ|160.24149|     100|161.34756|     100|       null|              null|       158.81964|158.81964111328125|
+|2020-08-06|       Q|  SYMC|1.59673933E9|          18|  NASDAQ|160.98407|     100|161.75124|     100|       null|              null|       158.81964|158.81964111328125|
+|2020-08-06|       Q|  SYMC|1.59673971E9|          19|  NASDAQ|157.34402|     100|159.16954|     100|       null|              null|       158.81964|158.81964111328125|
+|2020-08-06|       T|  SYMC| 1.5967401E9|          20|  NASDAQ|     null|    null|     null|    null|  160.77866|160.77865600585938|       160.77866|160.77865600585938|
++----------+--------+------+------------+------------+--------+---------+--------+---------+--------+-----------+------------------+----------------+------------------+
+only showing top 20 rows
+
+21/09/17 09:44:19 INFO FileSourceStrategy: Pushed Filters:
+21/09/17 09:44:19 INFO FileSourceStrategy: Post-Scan Filters:
+21/09/17 09:44:19 INFO FileSourceStrategy: Output Data Schema: struct<trade_dt: date, rec_type: string, symbol: string, exchange: string, event_tm: float ... 8 more fields>
+21/09/17 09:44:19 INFO FileSourceStrategy: Pushed Filters:
+21/09/17 09:44:19 INFO FileSourceStrategy: Post-Scan Filters:
+21/09/17 09:44:19 INFO FileSourceStrategy: Output Data Schema: struct<trade_dt: date, symbol: string, exchange: string, event_tm: float, event_seq_nb: int ... 5 more fields>
+21/09/17 09:44:20 INFO TaskSchedulerImpl: Killing all running tasks in stage 57: Stage finished
+21/09/17 09:44:20 INFO DAGScheduler: Job 31 finished: showString at <unknown>:0, took 0.589931 s
+21/09/17 09:44:20 INFO CodeGenerator: Code generated in 6.2033 ms
++----------+------+------------+------------+--------+---------+--------+---------+--------+----------------+------------------+
+|  trade_dt|symbol|    event_tm|event_seq_nb|exchange|bid_price|bid_size|ask_price|ask_size|last_trade_price|   last_mov_avg_pr|
++----------+------+------------+------------+--------+---------+--------+---------+--------+----------------+------------------+
+|2020-08-06|  SYMC|1.59673638E9|          11|  NASDAQ|158.67136|     100|160.61841|     100|       158.81964|158.81964111328125|
+|2020-08-06|  SYMC| 1.5967369E9|          12|  NASDAQ|161.09976|     100|161.82758|     100|       158.81964|158.81964111328125|
+|2020-08-06|  SYMC|1.59673728E9|          13|  NASDAQ|158.26437|     100| 160.1126|     100|       158.81964|158.81964111328125|
+|2020-08-06|  SYMC|1.59673779E9|          14|  NASDAQ|159.14417|     100|160.42744|     100|       158.81964|158.81964111328125|
+|2020-08-06|  SYMC|1.59673818E9|          15|  NASDAQ|161.59192|     100|162.35564|     100|       158.81964|158.81964111328125|
+|2020-08-06|  SYMC|1.59673856E9|          16|  NASDAQ|158.32402|     100|159.65079|     100|       158.81964|158.81964111328125|
+|2020-08-06|  SYMC|1.59673907E9|          17|  NASDAQ|160.24149|     100|161.34756|     100|       158.81964|158.81964111328125|
+|2020-08-06|  SYMC|1.59673933E9|          18|  NASDAQ|160.98407|     100|161.75124|     100|       158.81964|158.81964111328125|
+|2020-08-06|  SYMC|1.59673971E9|          19|  NASDAQ|157.34402|     100|159.16954|     100|       158.81964|158.81964111328125|
+|2020-08-06|  SYMC|1.59674061E9|          21|  NASDAQ|160.12529|     100|160.35422|     100|       160.77866|160.77865600585938|
+|2020-08-06|  SYMC|1.59674099E9|          22|  NASDAQ|158.22388|     100| 160.1162|     100|       160.77866|160.77865600585938|
+|2020-08-06|  SYMC| 1.5967415E9|          23|  NASDAQ|160.74527|     100|162.25053|     100|       160.77866|160.77865600585938|
+|2020-08-06|  SYMC|1.59674176E9|          24|  NASDAQ|158.40297|     100| 158.8908|     100|       160.77866|160.77865600585938|
+|2020-08-06|  SYMC| 1.5967424E9|          25|  NASDAQ|159.65181|     100|159.78308|     100|       160.77866|160.77865600585938|
+|2020-08-06|  SYMC|1.59674278E9|          26|  NASDAQ|158.62038|     100|158.87498|     100|       160.77866|160.77865600585938|
+|2020-08-06|  SYMC|1.59674317E9|          27|  NASDAQ|159.50443|     100|160.10959|     100|       160.77866|160.77865600585938|
+|2020-08-06|  SYMC|1.59674368E9|          28|  NASDAQ|157.81615|     100| 158.1545|     100|       160.77866|160.77865600585938|
+|2020-08-06|  SYMC|1.59674406E9|          29|  NASDAQ|161.22229|     100|162.59366|     100|       160.77866|160.77865600585938|
+|2020-08-06|  SYMC|1.59674483E9|          31|  NASDAQ|159.65053|     100|160.12068|     100|       160.12585| 160.1258544921875|
+|2020-08-06|  SYMC|1.59674522E9|          32|  NASDAQ| 160.2566|     100|161.87518|     100|       160.12585| 160.1258544921875|
++----------+------+------------+------------+--------+---------+--------+---------+--------+----------------+------------------+
+only showing top 20 rows
+21/09/17 09:44:21 INFO DAGScheduler: Job 36 finished: showString at <unknown>:0, took 0.591215 s
+21/09/17 09:44:21 INFO CodeGenerator: Code generated in 7.283801 ms
++----------+------+------------+------------+--------+---------+--------+---------+--------+----------------+------------------+-------------------+-------------------+
+|  trade_dt|symbol|    event_tm|event_seq_nb|exchange|bid_price|bid_size|ask_price|ask_size|last_trade_price|   last_mov_avg_pr|          bid_pr_mv|          ask_pr_mv|
++----------+------+------------+------------+--------+---------+--------+---------+--------+----------------+------------------+-------------------+-------------------+
+|2020-08-06|  SYMC|1.59673638E9|          11|  NASDAQ|158.67136|     100|160.61841|     100|       158.81964|158.81964111328125|  1.834625244140625|   3.78167724609375|
+|2020-08-06|  SYMC|1.59673638E9|          11|  NASDAQ|158.67136|     100|160.61841|     100|       158.81964|158.81964111328125| -2.312835693359375|  -0.36578369140625|
+|2020-08-06|  SYMC|1.59673638E9|          11|  NASDAQ|158.67136|     100|160.61841|     100|       158.81964|158.81964111328125|  -0.39678955078125|  1.550262451171875|
+|2020-08-06|  SYMC|1.59673638E9|          11|  NASDAQ|158.67136|     100|160.61841|     100|       158.81964|158.81964111328125|-2.4887847900390625|-0.5417327880859375|
+|2020-08-06|  SYMC|1.59673638E9|          11|  NASDAQ|158.67136|     100|160.61841|     100|       158.81964|158.81964111328125|-0.3456268310546875| 1.6014251708984375|
+|2020-08-06|  SYMC|1.59673638E9|          11|  NASDAQ|158.67136|     100|160.61841|     100|       158.81964|158.81964111328125|-2.1600189208984375|-0.2129669189453125|
+|2020-08-06|  SYMC|1.59673638E9|          11|  NASDAQ|158.67136|     100|160.61841|     100|       158.81964|158.81964111328125| 1.5310516357421875| 3.4781036376953125|
+|2020-08-06|  SYMC|1.59673638E9|          11|  NASDAQ|158.67136|     100|160.61841|     100|       158.81964|158.81964111328125| -1.454498291015625|    0.4925537109375|
+|2020-08-06|  SYMC|1.59673638E9|          11|  NASDAQ|158.67136|     100|160.61841|     100|       158.81964|158.81964111328125|   -2.1072998046875| -0.160247802734375|
+|2020-08-06|  SYMC|1.59673638E9|          11|  NASDAQ|158.67136|     100|160.61841|     100|       158.81964|158.81964111328125| -0.148284912109375|   1.79876708984375|
+|2020-08-06|  SYMC| 1.5967369E9|          12|  NASDAQ|161.09976|     100|161.82758|     100|       158.81964|158.81964111328125|  4.263031005859375|    4.9908447265625|
+|2020-08-06|  SYMC| 1.5967369E9|          12|  NASDAQ|161.09976|     100|161.82758|     100|       158.81964|158.81964111328125|  0.115570068359375|    0.8433837890625|
+|2020-08-06|  SYMC| 1.5967369E9|          12|  NASDAQ|161.09976|     100|161.82758|     100|       158.81964|158.81964111328125|    2.0316162109375|  2.759429931640625|
+|2020-08-06|  SYMC| 1.5967369E9|          12|  NASDAQ|161.09976|     100|161.82758|     100|       158.81964|158.81964111328125|-0.0603790283203125| 0.6674346923828125|
+|2020-08-06|  SYMC| 1.5967369E9|          12|  NASDAQ|161.09976|     100|161.82758|     100|       158.81964|158.81964111328125| 2.0827789306640625| 2.8105926513671875|
+|2020-08-06|  SYMC| 1.5967369E9|          12|  NASDAQ|161.09976|     100|161.82758|     100|       158.81964|158.81964111328125| 0.2683868408203125| 0.9962005615234375|
+|2020-08-06|  SYMC| 1.5967369E9|          12|  NASDAQ|161.09976|     100|161.82758|     100|       158.81964|158.81964111328125| 3.9594573974609375| 4.6872711181640625|
+|2020-08-06|  SYMC| 1.5967369E9|          12|  NASDAQ|161.09976|     100|161.82758|     100|       158.81964|158.81964111328125|  0.973907470703125|   1.70172119140625|
+|2020-08-06|  SYMC| 1.5967369E9|          12|  NASDAQ|161.09976|     100|161.82758|     100|       158.81964|158.81964111328125|   0.32110595703125|  1.048919677734375|
+|2020-08-06|  SYMC| 1.5967369E9|          12|  NASDAQ|161.09976|     100|161.82758|     100|       158.81964|158.81964111328125|  2.280120849609375|    3.0079345703125|
++----------+------+------------+------------+--------+---------+--------+---------+--------+----------------+------------------+-------------------+-------------------+
+only showing top 20 rows
+
+21/09/17 09:44:21 INFO ShutdownHookManager: Shutdown hook called
+21/09/17 09:44:21 INFO ShutdownHookManager: Deleting directory C:\Users\cardo\AppData\Local\Temp\spark-828bfa93-34c5-4eae-a9f8-cc7435c5d9b1
+21/09/17 09:44:21 INFO ShutdownHookManager: Deleting directory C:\Users\cardo\AppData\Local\Temp\spark-4a553674-afeb-44f3-bf37-5d931e299044\pyspark-6117d561-204f-4b65-9517-eb4616e33ce3
+21/09/17 09:44:21 INFO ShutdownHookManager: Deleting directory C:\Users\cardo\AppData\Local\Temp\spark-4a553674-afeb-44f3-bf37-5d931e299044
+
+C:\Users\cardo\PycharmProjects\SPRINGBOARD>
