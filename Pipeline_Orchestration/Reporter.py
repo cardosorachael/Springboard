@@ -19,9 +19,7 @@ class Reporter(object):
         # Trade
 
         spark = SparkSession.builder.master('local').appName('app').getOrCreate()
-        # spark.conf.set("adf_storage_account_key")
-        spark.conf.set("fs.azure.account.key.adfrachaelcdevstorage.blob.core.windows.net",
-                       "cXM5vzkdfXgMVwxhGZtfhD2EEEcFzhyltJCArHRA+cXuRQbJG2kpLBGCFg5FRuLURmuz7Ik4ZXDpQBVvnpZpdw==")
+        spark.conf.set("adf_storage_account_key")
 
         trades_df = spark.read.parquet("path/trade/trade_dt={}".format(trade_date))
         # trades_df.show()
