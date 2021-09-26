@@ -1,0 +1,375 @@
+Microsoft Windows [Version 10.0.19043.1237]
+(c) Microsoft Corporation. All rights reserved.
+
+(venv) C:\Users\cardo\PycharmProjects\SPRINGBOARD>
+(venv) C:\Users\cardo\PycharmProjects\SPRINGBOARD>spark-submit C:\Users\cardo\PycharmProjects\SPRINGBOARD\Guided_Capstone\Pipeline_Orchestration\Run_Reporter.py
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+21/09/26 08:40:36 INFO SparkContext: Running Spark version 3.1.2
+21/09/26 08:40:36 INFO ResourceUtils: ==============================================================
+21/09/26 08:40:36 INFO ResourceUtils: No custom resources configured for spark.driver.
+21/09/26 08:40:36 INFO ResourceUtils: ==============================================================
+21/09/26 08:40:36 INFO SparkContext: Submitted application: app
+21/09/26 08:40:36 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 1024, script: , vendor: , offHe
+ap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+21/09/26 08:40:36 INFO ResourceProfile: Limiting resource is cpu
+21/09/26 08:40:36 INFO ResourceProfileManager: Added ResourceProfile id: 0
+21/09/26 08:40:36 INFO SecurityManager: Changing view acls to: cardo
+21/09/26 08:40:36 INFO SecurityManager: Changing modify acls to: cardo
+21/09/26 08:40:36 INFO SecurityManager: Changing view acls groups to:
+21/09/26 08:40:43 INFO ParquetOutputFormat: Validation is off
+21/09/26 08:40:43 INFO ParquetOutputFormat: Writer version is: PARQUET_1_0
+21/09/26 08:40:43 INFO ParquetOutputFormat: Maximum row group padding size is 8388608 bytes
+21/09/26 08:40:43 INFO ParquetOutputFormat: Page size checking is: estimated
+21/09/26 08:40:43 INFO ParquetOutputFormat: Min row count for page size check is: 100
+21/09/26 08:40:43 INFO ParquetOutputFormat: Max row count for page size check is: 10000
+21/09/26 08:40:43 INFO ParquetWriteSupport: Initialized Parquet WriteSupport with Catalyst schema:
+{
+  "type" : "struct",
+  "fields" : [ {
+    "name" : "trade_dt",
+    "type" : "date",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "symbol",
+    "type" : "string",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "exchange",
+    "type" : "string",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "event_tm",
+    "type" : "float",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "event_seq_nb",
+    "type" : "integer",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "trade_price",
+    "type" : "float",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "mov_avg_pr",
+    "type" : "double",
+    "nullable" : true,
+    "metadata" : { }
+  } ]
+}
+and corresponding Parquet message type:
+message spark_schema {
+  optional int32 trade_dt (DATE);
+  optional binary symbol (UTF8);
+  optional binary exchange (UTF8);
+  optional float event_tm;
+  optional int32 event_seq_nb;
+  optional float trade_price;
+  optional double mov_avg_pr;
+}
+
+21/09/26 08:40:44 INFO ParquetOutputFormat: Min row count for page size check is: 100
+21/09/26 08:40:44 INFO ParquetOutputFormat: Max row count for page size check is: 10000
+21/09/26 08:40:44 INFO ParquetWriteSupport: Initialized Parquet WriteSupport with Catalyst schema:
+{
+  "type" : "struct",
+  "fields" : [ {
+    "name" : "trade_dt",
+    "type" : "date",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "symbol",
+    "type" : "string",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "exchange",
+    "type" : "string",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "event_tm",
+    "type" : "float",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "event_seq_nb",
+    "type" : "integer",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "trade_price",
+    "type" : "float",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "mov_avg_pr",
+    "type" : "double",
+    "nullable" : true,
+    "metadata" : { }
+  } ]
+}
+and corresponding Parquet message type:
+message spark_schema {
+  optional int32 trade_dt (DATE);
+  optional binary symbol (UTF8);
+  optional binary exchange (UTF8);
+  optional float event_tm;
+  optional int32 event_seq_nb;
+  optional float trade_price;
+  optional double mov_avg_pr;
+}
+
+
+21/09/26 08:40:44 INFO InternalParquetRecordWriter: Flushing mem columnStore to file. allocated memory: 502
+21/09/26 08:40:44 INFO FileOutputCommitter: Saved output of task 'attempt_202109260840436518712065513883790_0002_m_000130_3' to file:/C:/Users/cardo/PycharmProjects/SPRINGBOARD/spark-warehouse/temp_trade_moving_av
+g/_temporary/0/task_202109260840436518712065513883790_0002_m_000130
+21/09/26 08:40:44 INFO SparkHadoopMapRedUtil: attempt_202109260840436518712065513883790_0002_m_000130_3: Committed
+21/09/26 08:40:44 INFO Executor: Finished task 130.0 in stage 2.0 (TID 3). 4397 bytes result sent to driver
+21/09/26 08:40:44 INFO TaskSetManager: Starting task 165.0 in stage 2.0 (TID 4) (host.docker.internal, executor driver, partition 165, NODE_LOCAL, 4453 bytes) taskResourceAssignments Map()
+21/09/26 08:40:44 INFO Executor: Running task 165.0 in stage 2.0 (TID 4)
+21/09/26 08:40:44 INFO TaskSetManager: Finished task 130.0 in stage 2.0 (TID 3) in 62 ms on host.docker.internal (executor driver) (2/200)
+21/09/26 08:40:44 INFO ShuffleBlockFetcherIterator: Getting 1 (405.0 B) non-empty blocks including 1 (405.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+21/09/26 08:40:44 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+21/09/26 08:40:44 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+21/09/26 08:40:44 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+21/09/26 08:40:44 INFO SQLHadoopMapReduceCommitProtocol: Using user defined output committer class org.apache.parquet.hadoop.ParquetOutputCommitter
+21/09/26 08:40:44 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+21/09/26 08:40:44 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+21/09/26 08:40:44 INFO SQLHadoopMapReduceCommitProtocol: Using output committer class org.apache.parquet.hadoop.ParquetOutputCommitter
+21/09/26 08:40:44 INFO CodecConfig: Compression: SNAPPY
+21/09/26 08:40:44 INFO CodecConfig: Compression: SNAPPY
+21/09/26 08:40:44 INFO ParquetOutputFormat: Parquet block size to 134217728
+21/09/26 08:40:44 INFO ParquetOutputFormat: Parquet page size to 1048576
+21/09/26 08:40:44 INFO ParquetOutputFormat: Parquet dictionary page size to 1048576
+21/09/26 08:40:44 INFO ParquetOutputFormat: Dictionary is on
+21/09/26 08:40:44 INFO ParquetOutputFormat: Validation is off
+21/09/26 08:40:44 INFO ParquetOutputFormat: Writer version is: PARQUET_1_0
+21/09/26 08:40:44 INFO ParquetOutputFormat: Maximum row group padding size is 8388608 bytes
+21/09/26 08:40:44 INFO ParquetOutputFormat: Page size checking is: estimated
+21/09/26 08:40:44 INFO ParquetOutputFormat: Min row count for page size check is: 100
+21/09/26 08:40:44 INFO ParquetOutputFormat: Max row count for page size check is: 10000
+21/09/26 08:40:44 INFO ParquetWriteSupport: Initialized Parquet WriteSupport with Catalyst schema:
+{
+  "type" : "struct",
+  "fields" : [ {
+    "name" : "trade_dt",
+    "type" : "date",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "symbol",
+    "type" : "string",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "exchange",
+    "type" : "string",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "event_tm",
+    "type" : "float",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "event_seq_nb",
+    "type" : "integer",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "trade_price",
+    "type" : "float",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "mov_avg_pr",
+    "type" : "double",
+    "nullable" : true,
+    "metadata" : { }
+  } ]
+}
+and corresponding Parquet message type:
+message spark_schema {
+  optional int32 trade_dt (DATE);
+  optional binary symbol (UTF8);
+  optional binary exchange (UTF8);
+  optional float event_tm;
+  optional int32 event_seq_nb;
+  optional float trade_price;
+  optional double mov_avg_pr;
+}
+21/09/26 08:40:44 INFO ParquetOutputFormat: Page size checking is: estimated
+21/09/26 08:40:44 INFO ParquetOutputFormat: Min row count for page size check is: 100
+21/09/26 08:40:44 INFO ParquetOutputFormat: Max row count for page size check is: 10000
+21/09/26 08:40:44 INFO ParquetWriteSupport: Initialized Parquet WriteSupport with Catalyst schema:
+{
+  "type" : "struct",
+  "fields" : [ {
+    "name" : "trade_dt",
+    "type" : "date",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "symbol",
+    "type" : "string",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "exchange",
+    "type" : "string",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "event_tm",
+    "type" : "float",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "event_seq_nb",
+    "type" : "integer",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "trade_price",
+    "type" : "float",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "mov_avg_pr",
+    "type" : "double",
+    "nullable" : true,
+    "metadata" : { }
+  } ]
+}
+and corresponding Parquet message type:
+message spark_schema {
+  optional int32 trade_dt (DATE);
+  optional binary symbol (UTF8);
+  optional binary exchange (UTF8);
+  optional float event_tm;
+  optional int32 event_seq_nb;
+  optional float trade_price;
+  optional double mov_avg_pr;
+}
+
+
+21/09/26 08:40:44 INFO InternalParquetRecordWriter: Flushing mem columnStore to file. allocated memory: 0
+21/09/26 08:40:44 INFO FileOutputCommitter: Saved output of task 'attempt_202109260840436021144469646521180_0002_m_000000_5' to file:/C:/Users/cardo/PycharmProjects/SPRINGBOARD/spark-warehouse/temp_trade_moving_av
+g/_temporary/0/task_202109260840436021144469646521180_0002_m_000000 
+21/09/26 08:40:49 INFO TaskSchedulerImpl: Killing all running tasks in stage 12: Stage finished
+21/09/26 08:40:49 INFO DAGScheduler: Job 6 finished: showString at <unknown>:0, took 0.557491 s
+21/09/26 08:40:49 INFO CodeGenerator: Code generated in 8.6314 ms
++----------+------+--------+------------+------------+-----------+------------------+
+|  trade_dt|symbol|exchange|    event_tm|event_seq_nb|trade_price|        mov_avg_pr|
++----------+------+--------+------------+------------+-----------+------------------+
+|2020-08-06|  SYMC|  NASDAQ|1.59673587E9|          10|  158.81964|158.81964111328125|
+|2020-08-06|  SYMC|  NASDAQ| 1.5967401E9|          20|  160.77866|160.77865600585938|
+|2020-08-06|  SYMC|  NASDAQ|1.59674445E9|          30|  160.12585| 160.1258544921875|
+|2020-08-06|  SYMC|  NASDAQ|1.59674854E9|          40|   157.1403| 157.1403045654297|
+|2020-08-06|  SYMC|  NASDAQ|1.59675302E9|          50|  160.83138| 160.8313751220703|
+|2020-08-06|  SYMC|  NASDAQ| 1.5967575E9|          60|  159.01698|159.01698303222656|
+|2020-08-06|  SYMC|  NASDAQ|1.59676147E9|          70|  161.16014|161.16014099121094|
+|2020-08-06|  SYMC|  NASDAQ|1.59676557E9|          80|  159.06815|159.06814575195312|
+|2020-08-06|  SYMC|  NASDAQ|1.59676979E9|          90|  160.98419|160.98419189453125|
+|2020-08-06|  SYMC|  NASDAQ|1.59677389E9|         100|  156.83673|156.83673095703125|
+|2020-08-06|  SYMA|  NASDAQ|1.59673574E9|          10|   78.93246| 78.93245697021484|
+|2020-08-06|  SYMA|  NASDAQ|1.59674048E9|          20|    77.0967|  77.0967025756836|
+|2020-08-06|  SYMA|  NASDAQ|1.59674458E9|          30|   78.31462| 78.31462097167969|
+|2020-08-06|  SYMA|  NASDAQ|1.59674918E9|          40|   75.84401| 75.84400939941406|
+|2020-08-06|  SYMA|  NASDAQ|1.59675354E9|          50|   77.62613| 77.62612915039062|
+|2020-08-06|  SYMA|  NASDAQ|1.59675738E9|          60|   77.57371|  77.5737075805664|
+|2020-08-06|  SYMA|  NASDAQ|1.59676211E9|          70|   76.97747| 76.97747039794922|
+|2020-08-06|  SYMA|  NASDAQ|1.59676621E9|          80|   78.62379| 78.62378692626953|
+|2020-08-06|  SYMA|  NASDAQ|1.59677056E9|          90|   77.81714|   77.817138671875|
+|2020-08-06|  SYMA|  NASDAQ|1.59677478E9|         100|  77.437195| 77.43719482421875|
++----------+------+--------+------------+------------+-----------+------------------+
+only showing top 20 rows
+
+21/09/26 08:40:49 INFO SparkUI: Stopped Spark web UI at http://host.docker.internal:4040
+21/09/26 08:40:49 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+21/09/26 08:40:49 INFO MemoryStore: MemoryStore cleared
+21/09/26 08:40:49 INFO BlockManager: BlockManager stopped
+21/09/26 08:40:49 INFO BlockManagerMaster: BlockManagerMaster stopped
+21/09/26 08:40:49 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+21/09/26 08:40:49 INFO SparkContext: Successfully stopped SparkContext
+21/09/26 08:40:49 INFO ShutdownHookManager: Shutdown hook called
+21/09/26 08:40:49 INFO ShutdownHookManager: Deleting directory C:\Users\cardo\AppData\Local\Temp\spark-dc2ffc77-ebee-4498-802b-9741351ad247
+21/09/26 08:40:49 INFO ShutdownHookManager: Deleting directory C:\Users\cardo\AppData\Local\Temp\spark-0c31ca64-6118-4a9c-88f2-89eaadb7fd18\pyspark-7daa3fea-07c9-4cc9-ab97-7ce2ab246e7f
+21/09/26 08:40:49 INFO ShutdownHookManager: Deleting directory C:\Users\cardo\AppData\Local\Temp\spark-0c31ca64-6118-4a9c-88f2-89eaadb7fd18
+
+
+21/09/26 08:40:49 INFO FileSourceStrategy: Pushed Filters:
+21/09/26 08:40:49 INFO FileSourceStrategy: Post-Scan Filters:
+21/09/26 08:40:49 INFO FileSourceStrategy: Output Data Schema: struct<trade_dt: date, rec_type: string, symbol: string, exchange: string, event_tm: float ... 8 more fields>
+21/09/26 08:40:49 INFO FileSourceStrategy: Pushed Filters:
+21/09/26 08:40:49 INFO FileSourceStrategy: Post-Scan Filters:
+21/09/26 08:40:49 INFO FileSourceStrategy: Output Data Schema: struct<trade_dt: date, symbol: string, exchange: string, event_tm: float, event_seq_nb: int ... 5 more fields>
+21/09/26 08:40:49 INFO TaskSchedulerImpl: Killing all running tasks in stage 57: Stage finished
+21/09/26 08:40:49 INFO DAGScheduler: Job 31 finished: showString at <unknown>:0, took 0.589931 s
+21/09/26 08:40:49 INFO CodeGenerator: Code generated in 6.2033 ms
++----------+------+------------+------------+--------+---------+--------+---------+--------+----------------+------------------+
+|  trade_dt|symbol|    event_tm|event_seq_nb|exchange|bid_price|bid_size|ask_price|ask_size|last_trade_price|   last_mov_avg_pr|
++----------+------+------------+------------+--------+---------+--------+---------+--------+----------------+------------------+
+|2020-08-06|  SYMC|1.59673638E9|          11|  NASDAQ|158.67136|     100|160.61841|     100|       158.81964|158.81964111328125|
+|2020-08-06|  SYMC| 1.5967369E9|          12|  NASDAQ|161.09976|     100|161.82758|     100|       158.81964|158.81964111328125|
+|2020-08-06|  SYMC|1.59673728E9|          13|  NASDAQ|158.26437|     100| 160.1126|     100|       158.81964|158.81964111328125|
+|2020-08-06|  SYMC|1.59673779E9|          14|  NASDAQ|159.14417|     100|160.42744|     100|       158.81964|158.81964111328125|
+|2020-08-06|  SYMC|1.59673818E9|          15|  NASDAQ|161.59192|     100|162.35564|     100|       158.81964|158.81964111328125|
+|2020-08-06|  SYMC|1.59673856E9|          16|  NASDAQ|158.32402|     100|159.65079|     100|       158.81964|158.81964111328125|
+|2020-08-06|  SYMC|1.59673907E9|          17|  NASDAQ|160.24149|     100|161.34756|     100|       158.81964|158.81964111328125|
+|2020-08-06|  SYMC|1.59673933E9|          18|  NASDAQ|160.98407|     100|161.75124|     100|       158.81964|158.81964111328125|
+|2020-08-06|  SYMC|1.59673971E9|          19|  NASDAQ|157.34402|     100|159.16954|     100|       158.81964|158.81964111328125|
+|2020-08-06|  SYMC|1.59674061E9|          21|  NASDAQ|160.12529|     100|160.35422|     100|       160.77866|160.77865600585938|
+|2020-08-06|  SYMC|1.59674099E9|          22|  NASDAQ|158.22388|     100| 160.1162|     100|       160.77866|160.77865600585938|
+|2020-08-06|  SYMC| 1.5967415E9|          23|  NASDAQ|160.74527|     100|162.25053|     100|       160.77866|160.77865600585938|
+|2020-08-06|  SYMC|1.59674176E9|          24|  NASDAQ|158.40297|     100| 158.8908|     100|       160.77866|160.77865600585938|
+|2020-08-06|  SYMC| 1.5967424E9|          25|  NASDAQ|159.65181|     100|159.78308|     100|       160.77866|160.77865600585938|
+|2020-08-06|  SYMC|1.59674278E9|          26|  NASDAQ|158.62038|     100|158.87498|     100|       160.77866|160.77865600585938|
+|2020-08-06|  SYMC|1.59674317E9|          27|  NASDAQ|159.50443|     100|160.10959|     100|       160.77866|160.77865600585938|
+|2020-08-06|  SYMC|1.59674368E9|          28|  NASDAQ|157.81615|     100| 158.1545|     100|       160.77866|160.77865600585938|
+|2020-08-06|  SYMC|1.59674406E9|          29|  NASDAQ|161.22229|     100|162.59366|     100|       160.77866|160.77865600585938|
+|2020-08-06|  SYMC|1.59674483E9|          31|  NASDAQ|159.65053|     100|160.12068|     100|       160.12585| 160.1258544921875|
+|2020-08-06|  SYMC|1.59674522E9|          32|  NASDAQ| 160.2566|     100|161.87518|     100|       160.12585| 160.1258544921875|
++----------+------+------------+------------+--------+---------+--------+---------+--------+----------------+------------------+
+only showing top 20 rows
+21/09/26 08:40:50 INFO DAGScheduler: Job 36 finished: showString at <unknown>:0, took 0.591215 s
+21/09/26 08:40:50 INFO CodeGenerator: Code generated in 7.283801 ms
++----------+------+------------+------------+--------+---------+--------+---------+--------+----------------+------------------+-------------------+-------------------+
+|  trade_dt|symbol|    event_tm|event_seq_nb|exchange|bid_price|bid_size|ask_price|ask_size|last_trade_price|   last_mov_avg_pr|          bid_pr_mv|          ask_pr_mv|
++----------+------+------------+------------+--------+---------+--------+---------+--------+----------------+------------------+-------------------+-------------------+
+|2020-08-06|  SYMC|1.59673638E9|          11|  NASDAQ|158.67136|     100|160.61841|     100|       158.81964|158.81964111328125|  1.834625244140625|   3.78167724609375|
+|2020-08-06|  SYMC|1.59673638E9|          11|  NASDAQ|158.67136|     100|160.61841|     100|       158.81964|158.81964111328125| -2.312835693359375|  -0.36578369140625|
+|2020-08-06|  SYMC|1.59673638E9|          11|  NASDAQ|158.67136|     100|160.61841|     100|       158.81964|158.81964111328125|  -0.39678955078125|  1.550262451171875|
+|2020-08-06|  SYMC|1.59673638E9|          11|  NASDAQ|158.67136|     100|160.61841|     100|       158.81964|158.81964111328125|-2.4887847900390625|-0.5417327880859375|
+|2020-08-06|  SYMC|1.59673638E9|          11|  NASDAQ|158.67136|     100|160.61841|     100|       158.81964|158.81964111328125|-0.3456268310546875| 1.6014251708984375|
+|2020-08-06|  SYMC|1.59673638E9|          11|  NASDAQ|158.67136|     100|160.61841|     100|       158.81964|158.81964111328125|-2.1600189208984375|-0.2129669189453125|
+|2020-08-06|  SYMC|1.59673638E9|          11|  NASDAQ|158.67136|     100|160.61841|     100|       158.81964|158.81964111328125| 1.5310516357421875| 3.4781036376953125|
+|2020-08-06|  SYMC|1.59673638E9|          11|  NASDAQ|158.67136|     100|160.61841|     100|       158.81964|158.81964111328125| -1.454498291015625|    0.4925537109375|
+|2020-08-06|  SYMC|1.59673638E9|          11|  NASDAQ|158.67136|     100|160.61841|     100|       158.81964|158.81964111328125|   -2.1072998046875| -0.160247802734375|
+|2020-08-06|  SYMC|1.59673638E9|          11|  NASDAQ|158.67136|     100|160.61841|     100|       158.81964|158.81964111328125| -0.148284912109375|   1.79876708984375|
+|2020-08-06|  SYMC| 1.5967369E9|          12|  NASDAQ|161.09976|     100|161.82758|     100|       158.81964|158.81964111328125|  4.263031005859375|    4.9908447265625|
+|2020-08-06|  SYMC| 1.5967369E9|          12|  NASDAQ|161.09976|     100|161.82758|     100|       158.81964|158.81964111328125|  0.115570068359375|    0.8433837890625|
+|2020-08-06|  SYMC| 1.5967369E9|          12|  NASDAQ|161.09976|     100|161.82758|     100|       158.81964|158.81964111328125|    2.0316162109375|  2.759429931640625|
+|2020-08-06|  SYMC| 1.5967369E9|          12|  NASDAQ|161.09976|     100|161.82758|     100|       158.81964|158.81964111328125|-0.0603790283203125| 0.6674346923828125|
+|2020-08-06|  SYMC| 1.5967369E9|          12|  NASDAQ|161.09976|     100|161.82758|     100|       158.81964|158.81964111328125| 2.0827789306640625| 2.8105926513671875|
+|2020-08-06|  SYMC| 1.5967369E9|          12|  NASDAQ|161.09976|     100|161.82758|     100|       158.81964|158.81964111328125| 0.2683868408203125| 0.9962005615234375|
+|2020-08-06|  SYMC| 1.5967369E9|          12|  NASDAQ|161.09976|     100|161.82758|     100|       158.81964|158.81964111328125| 3.9594573974609375| 4.6872711181640625|
+|2020-08-06|  SYMC| 1.5967369E9|          12|  NASDAQ|161.09976|     100|161.82758|     100|       158.81964|158.81964111328125|  0.973907470703125|   1.70172119140625|
+|2020-08-06|  SYMC| 1.5967369E9|          12|  NASDAQ|161.09976|     100|161.82758|     100|       158.81964|158.81964111328125|   0.32110595703125|  1.048919677734375|
+|2020-08-06|  SYMC| 1.5967369E9|          12|  NASDAQ|161.09976|     100|161.82758|     100|       158.81964|158.81964111328125|  2.280120849609375|    3.0079345703125|
++----------+------+------------+------------+--------+---------+--------+---------+--------+----------------+------------------+-------------------+-------------------+
+only showing top 20 rows
+
+21/09/26 08:40:50 INFO ShutdownHookManager: Shutdown hook called
+21/09/26 08:40:50 INFO ShutdownHookManager: Deleting directory C:\Users\cardo\AppData\Local\Temp\spark-828bfa93-34c5-4eae-a9f8-cc7435c5d9b1
+21/09/26 08:40:50 INFO ShutdownHookManager: Deleting directory C:\Users\cardo\AppData\Local\Temp\spark-4a553674-afeb-44f3-bf37-5d931e299044\pyspark-6117d561-204f-4b65-9517-eb4616e33ce3
+21/09/26 08:40:50 INFO ShutdownHookManager: Deleting directory C:\Users\cardo\AppData\Local\Temp\spark-4a553674-afeb-44f3-bf37-5d931e299044
+
+C:\Users\cardo\PycharmProjects\SPRINGBOARD>
