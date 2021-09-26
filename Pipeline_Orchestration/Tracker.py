@@ -35,17 +35,10 @@ class Tracker:
     def get_db_connection(self):
         try:
 
-            connection = mysql.connector.connect(user='root',
-                                                 password='db123',
-                                                 host='127.0.0.1',
-                                                 port='3306',
-                                                 database='guidedcapstone')
-            # return connection
-
             mydb = mysql.connector.connect(
-                host="localhost",  # hostname
-                user="root",  # the user who has privilege to the db
-                passwd="db123",  # password for user
+                host="host",  # hostname
+                user="user",  # the user who has privilege to the db
+                password="password",  # password for user
                 database="guidedcapstone",  # database name
                 auth_plugin='mysql_native_password',
 
@@ -213,8 +206,7 @@ class Tracker:
         spark = pyspark.sql.SparkSession.builder.master('local').appName('app').getOrCreate()
         # sc = SparkContext()
 
-        spark.conf.set("fs.azure.account.key.adfrachaelcdevstorage.blob.core.windows.net",
-                       "cXM5vzkdfXgMVwxhGZtfhD2EEEcFzhyltJCArHRA+cXuRQbJG2kpLBGCFg5FRuLURmuz7Ik4ZXDpQBVvnpZpdw==")
+        spark.conf.set("adf_cloud_storage_path")
         raw = spark.sparkContext.textFile(
             "wasbs://mycontainer@adfrachaelcdevstorage.blob.core.windows.net/my_blob_dir/data/csv/2020-08-06/NYSE")
         parsed = raw.map(lambda line: parse_csv(line))
