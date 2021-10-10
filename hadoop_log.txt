@@ -1,0 +1,242 @@
+Microsoft Windows [Version 10.0.19043.1237]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\cardo>cd C:\Downloads
+The system cannot find the path specified.
+
+C:\Users\cardo>cd C:
+C:\Users\cardo
+
+C:\Users\cardo>cd Downloads
+
+C:\Users\cardo\Downloads>cd docker-hadoop
+
+C:\Users\cardo\Downloads\docker-hadoop>cd docker-hadoop-master
+
+C:\Users\cardo\Downloads\docker-hadoop\docker-hadoop-master>docker-compose up -d
+Creating network "docker-hadoop-master_default" with the default driver
+Creating namenode        ... done
+Creating resourcemanager ... done
+Creating datanode        ... done
+Creating historyserver   ... done
+Creating nodemanager     ... done
+
+C:\Users\cardo\Downloads\docker-hadoop\docker-hadoop-master>docker ps
+CONTAINER ID   IMAGE                                                    COMMAND                  CREATED          STATUS                             PORTS                                                                                  NAMES
+01bd40d76e90   bde2020/hadoop-nodemanager:2.0.0-hadoop3.2.1-java8       "/entrypoint.sh /run…"   17 seconds ago   Up 12 seconds (health: starting)   8042/tcp                                                                               nodemanager
+1a1f846e9dd6   bde2020/hadoop-namenode:2.0.0-hadoop3.2.1-java8          "/entrypoint.sh /run…"   17 seconds ago   Up 12 seconds (health: starting)   0.0.0.0:9000->9000/tcp, :::9000->9000/tcp, 0.0.0.0:9870->9870/tcp, :::9870->9870/tcp   namenode
+be13a7d1d2ce   bde2020/hadoop-historyserver:2.0.0-hadoop3.2.1-java8     "/entrypoint.sh /run…"   17 seconds ago   Up 12 seconds (health: starting)   8188/tcp                                                                               historyserver
+4af129de142e   bde2020/hadoop-datanode:2.0.0-hadoop3.2.1-java8          "/entrypoint.sh /run…"   17 seconds ago   Up 13 seconds (health: starting)   9864/tcp                                                                               datanode
+d433dbe9b96e   bde2020/hadoop-resourcemanager:2.0.0-hadoop3.2.1-java8   "/entrypoint.sh /run…"   17 seconds ago   Up 13 seconds (health: starting)   8088/tcp                                                                               resourcemanager
+
+C:\Users\cardo\Downloads\docker-hadoop\docker-hadoop-master>docker cp C:/Users/cardo/PycharmProjects/SPRINGBOARD/Hadoop/final_mapper.py namenode:final_mapper.py
+
+C:\Users\cardo\Downloads\docker-hadoop\docker-hadoop-master>docker cp C:/Users/cardo/PycharmProjects/SPRINGBOARD/Hadoop/final_reducer.py namenode:final_reducer.py
+
+C:\Users\cardo\Downloads\docker-hadoop\docker-hadoop-master>docker cp C:/Users/cardo/PycharmProjects/SPRINGBOARD/Hadoop/final_reducer2.py namenode:final_reducer2.py
+
+C:\Users\cardo\Downloads\docker-hadoop\docker-hadoop-master>docker cp C:/Users/cardo/PycharmProjects/SPRINGBOARD/Hadoop/final_mapper2.py namenode:final_mapper2.py
+
+C:\Users\cardo\Downloads\docker-hadoop\docker-hadoop-master>docker exec -it namenode bash
+root@1a1f846e9dd6:/# ls
+KEYS  boot  entrypoint.sh  final_mapper.py   final_reducer.py   hadoop       home  lib64  mnt  proc  run     sbin  sys  usr
+bin   dev   etc            final_mapper2.py  final_reducer2.py  hadoop-data  lib   media  opt  root  run.sh  srv   tmp  var
+root@1a1f846e9dd6:/# hdfs dfs -mkdir -p /user/root/input
+root@1a1f846e9dd6:/# exit
+exit
+
+C:\Users\cardo\Downloads\docker-hadoop\docker-hadoop-master>docker cp C:/Users/cardo/PycharmProjects/SPRINGBOARD/Hadoop/input/data.csv namenode:data.csv
+
+C:\Users\cardo\Downloads\docker-hadoop\docker-hadoop-master>docker exec -it namenode bash
+root@1a1f846e9dd6:/# hdfs dfs -put data.csv /user/root/input
+2021-10-10 05:33:40,354 INFO sasl.SaslDataTransferClient: SASL encryption trust check: localHostTrusted = false, remoteHostTrusted = false
+
+root@1a1f846e9dd6:/# hadoop jar /opt/hadoop-3.2.1/share/hadoop/tools/lib/hadoop-streaming-3.2.1.jar \
+> -file final_mapper.py    -mapper final_mapper.py \
+> -file final_reducer.py   -reducer final_reducer.py \
+> -input input -output output
+2021-10-10 05:43:39,334 WARN streaming.StreamJob: -file option is deprecated, please use generic option -files instead.
+packageJobJar: [final_mapper.py, final_reducer.py, /tmp/hadoop-unjar6186169383178844114/] [] /tmp/streamjob4070640114323366863.jar tmpDir=null
+2021-10-10 05:43:40,127 INFO client.RMProxy: Connecting to ResourceManager at resourcemanager/172.25.0.2:8032
+2021-10-10 05:43:40,273 INFO client.AHSProxy: Connecting to Application History server at historyserver/172.25.0.5:10200
+2021-10-10 05:43:40,299 INFO client.RMProxy: Connecting to ResourceManager at resourcemanager/172.25.0.2:8032
+2021-10-10 05:43:40,299 INFO client.AHSProxy: Connecting to Application History server at historyserver/172.25.0.5:10200
+2021-10-10 05:43:40,458 INFO mapreduce.JobResourceUploader: Disabling Erasure Coding for path: /tmp/hadoop-yarn/staging/root/.staging/job_1633843584119_0001
+2021-10-10 05:43:40,555 INFO sasl.SaslDataTransferClient: SASL encryption trust check: localHostTrusted = false, remoteHostTrusted = false
+2021-10-10 05:43:40,635 INFO sasl.SaslDataTransferClient: SASL encryption trust check: localHostTrusted = false, remoteHostTrusted = false
+2021-10-10 05:43:40,657 INFO sasl.SaslDataTransferClient: SASL encryption trust check: localHostTrusted = false, remoteHostTrusted = false
+2021-10-10 05:43:40,722 INFO mapred.FileInputFormat: Total input files to process : 3
+2021-10-10 05:43:40,745 INFO sasl.SaslDataTransferClient: SASL encryption trust check: localHostTrusted = false, remoteHostTrusted = false
+2021-10-10 05:43:40,766 INFO sasl.SaslDataTransferClient: SASL encryption trust check: localHostTrusted = false, remoteHostTrusted = false
+2021-10-10 05:43:40,776 INFO mapreduce.JobSubmitter: number of splits:4
+2021-10-10 05:43:40,890 INFO sasl.SaslDataTransferClient: SASL encryption trust check: localHostTrusted = false, remoteHostTrusted = false
+2021-10-10 05:43:40,907 INFO mapreduce.JobSubmitter: Submitting tokens for job: job_1633843584119_0001
+2021-10-10 05:43:40,967 INFO mapreduce.JobSubmitter: Executing with tokens: []
+2021-10-10 05:43:42,065 INFO conf.Configuration: resource-types.xml not found
+2021-10-10 05:43:42,080 INFO resource.ResourceUtils: Unable to find 'resource-types.xml'.
+2021-10-10 05:43:43,108 INFO impl.YarnClientImpl: Submitted application application_1633843584119_0001
+2021-10-10 05:43:43,236 INFO mapreduce.Job: The url to track the job: http://resourcemanager:8088/proxy/application_1633843584119_0001/
+2021-10-10 05:43:43,339 INFO mapreduce.Job: Running job: job_1633843584119_0001
+2021-10-10 05:43:55,395 INFO mapreduce.Job: Job job_1633843584119_0001 running in uber mode : false
+2021-10-10 05:43:55,498 INFO mapreduce.Job:  map 0% reduce 0%
+2021-10-10 05:43:55,576 WARN streaming.StreamJob: -file option is deprecated, please use generic option -files instead.
+2021-10-10 05:43:56,720 INFO client.DefaultNoHARMFailoverProxyProvider: Connecting to ResourceManager at /0.0.0.0:8032
+2021-10-10 05:43:56,788 INFO mapreduce.JobResourceUploader: Disabling Erasure Coding for path: /tmp/hadoop-yarn/staging/cardo/.staging/job_1625091074693_0005
+2021-10-10 05:43:56,891 INFO mapred.FileInputFormat: Total input files to process : 1
+2021-10-10 05:43:56,940 INFO mapreduce.JobSubmitter: number of splits:2
+2021-10-10 05:43:56,045 INFO mapreduce.JobSubmitter: Submitting tokens for job: job_1625091074693_0005
+2021-10-10 05:43:56,056 INFO mapreduce.JobSubmitter: Executing with tokens: []
+2021-10-10 05:43:56,122 INFO conf.Configuration: resource-types.xml not found
+2021-10-10 05:43:56,223 INFO resource.ResourceUtils: Unable to find 'resource-types.xml'.
+2021-10-10 05:43:56,257 INFO impl.YarnClientImpl: Submitted application application_1625091074693_0005
+2021-10-10 05:43:57,394 INFO mapreduce.Job: Running job: job_1625091074693_0005
+2021-10-10 05:43:57,475 INFO mapreduce.Job: Job job_1625091074693_0005 running in uber mode : false
+2021-10-10 05:43:57,576 INFO mapreduce.Job:  map 0% reduce 0%
+2021-10-10 05:43:57,647 INFO mapreduce.Job:  map 100% reduce 0%
+2021-10-10 05:43:57,671 INFO mapreduce.Job:  map 100% reduce 100%
+2021-10-10 05:43:57,777 INFO mapreduce.Job: Job job_1625091074693_0005 completed successfully
+2021-10-10 05:43:57,755 INFO mapreduce.Job: Counters: 50
+        File System Counters
+                FILE: Number of bytes read=606
+                FILE: Number of bytes written=804464
+                FILE: Number of read operations=0
+                FILE: Number of large read operations=0
+                FILE: Number of write operations=0
+                HDFS: Number of bytes read=1750
+                HDFS: Number of bytes written=111
+                HDFS: Number of read operations=11
+                HDFS: Number of large read operations=0
+                HDFS: Number of write operations=2
+                HDFS: Number of bytes read erasure-coded=0
+        Job Counters
+                Launched map tasks=2
+                Launched reduce tasks=1
+                Data-local map tasks=2
+                Total time spent by all maps in occupied slots (ms)=9573
+                Total time spent by all reduces in occupied slots (ms)=4136
+                Total time spent by all map tasks (ms)=9573
+                Total time spent by all reduce tasks (ms)=4136
+                Total vcore-milliseconds taken by all map tasks=9573
+                Total vcore-milliseconds taken by all reduce tasks=4136
+                Total megabyte-milliseconds taken by all map tasks=9802752
+                Total megabyte-milliseconds taken by all reduce tasks=4235264
+        Map-Reduce Framework
+                Map input records=16
+                Map output records=16
+                Map output bytes=568
+                Map output materialized bytes=612
+                Input split bytes=260
+                Combine input records=0
+                Combine output records=0
+                Reduce input groups=5
+                Reduce shuffle bytes=612
+                Reduce input records=16
+                Reduce output records=5
+                Spilled Records=32
+                Shuffled Maps =2
+                Failed Shuffles=0
+                Merged Map outputs=2
+                GC time elapsed (ms)=97
+                CPU time spent (ms)=0
+                Physical memory (bytes) snapshot=0
+                Virtual memory (bytes) snapshot=0
+                Total committed heap usage (bytes)=852492288
+        Shuffle Errors
+                BAD_ID=0
+                CONNECTION=0
+                IO_ERROR=0
+                WRONG_LENGTH=0
+                WRONG_MAP=0
+                WRONG_REDUCE=0
+        File Input Format Counters
+                Bytes Read=1490
+        File Output Format Counters
+                Bytes Written=111
+2021-10-10 05:44:00,955 INFO streaming.StreamJob: Output directory: /test_directory/Hadoop_Mini_Project/output/all_accidents
+2021-10-10 05:44:00,085 WARN streaming.StreamJob: -file option is deprecated, please use generic option -files instead.
+2021-10-10 05:44:00,131 INFO impl.YarnClientImpl: Submitted application application_1625091074693_0006
+2021-10-10 05:44:00,161 INFO mapreduce.Job: Running job: job_1625091074693_0006
+2021-10-10 05:44:00,253 INFO mapreduce.Job: Job job_1625091074693_0006 running in uber mode : false
+2021-10-10 05:44:00,254 INFO mapreduce.Job:  map 0% reduce 0%
+2021-10-10 05:44:00,314 INFO mapreduce.Job:  map 100% reduce 0%
+2021-10-10 05:44:00,348 INFO mapreduce.Job:  map 100% reduce 100%
+2021-10-10 05:44:00,353 INFO mapreduce.Job: Job job_1625091074693_0006 completed successfully
+2021-10-10 05:44:00,423 INFO mapreduce.Job: Counters: 50
+        File System Counters
+                FILE: Number of bytes read=127
+                FILE: Number of bytes written=803533
+                FILE: Number of read operations=0
+                FILE: Number of large read operations=0
+                FILE: Number of write operations=0
+                HDFS: Number of bytes read=447
+                HDFS: Number of bytes written=209
+                HDFS: Number of read operations=11
+                HDFS: Number of large read operations=0
+                HDFS: Number of write operations=2
+                HDFS: Number of bytes read erasure-coded=0
+        Job Counters
+                Launched map tasks=2
+                Launched reduce tasks=1
+                Data-local map tasks=2
+                Total time spent by all maps in occupied slots (ms)=9405
+                Total time spent by all reduces in occupied slots (ms)=4101
+                Total time spent by all map tasks (ms)=9405
+                Total time spent by all reduce tasks (ms)=4101
+                Total vcore-milliseconds taken by all map tasks=9405
+                Total vcore-milliseconds taken by all reduce tasks=4101
+                Total megabyte-milliseconds taken by all map tasks=9630720
+                Total megabyte-milliseconds taken by all reduce tasks=4199424
+        Map-Reduce Framework
+                Map input records=5
+                Map output records=5
+                Map output bytes=111
+                Map output materialized bytes=133
+                Input split bytes=280
+                Combine input records=0
+                Combine output records=0
+                Reduce input groups=4
+                Reduce shuffle bytes=133
+                Reduce input records=5
+                Reduce output records=14
+                Spilled Records=10
+                Shuffled Maps =2
+                Failed Shuffles=0
+                Merged Map outputs=2
+                GC time elapsed (ms)=99
+                CPU time spent (ms)=0
+                Physical memory (bytes) snapshot=0
+                Virtual memory (bytes) snapshot=0
+                Total committed heap usage (bytes)=850919424
+        Shuffle Errors
+                BAD_ID=0
+                CONNECTION=0
+                IO_ERROR=0
+                WRONG_LENGTH=0
+                WRONG_MAP=0
+                WRONG_REDUCE=0
+        File Input Format Counters
+                Bytes Read=167
+        File Output Format Counters
+                Bytes Written=209
+2021-10-10 05:44:00,424 INFO streaming.StreamJob: Output directory: /test_directory/Hadoop_Mini_Project/output/make_year_count
+2021-10-10 05:44:00,539 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+('Mercedes', '2015')
+1
+('Mercedes', '2015')
+1
+('Mercedes', '2016')
+1
+('Nissan', '2003')
+1
+('Toyota', '2017')
+0
+('Mercedes', '2015')	2
+('Mercedes', '2016')	1
+('Nissan', '2003')	1
+('Toyota', '2017')	0
+
+
+
+
+
+
