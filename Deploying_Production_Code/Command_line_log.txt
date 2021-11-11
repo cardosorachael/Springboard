@@ -1,0 +1,15 @@
+PS C:\Users\cardo\PycharmProjects\SPRINGBOARD\CAPSTONE\Scaled_Data_Pipeline> aws emr add-steps --cluster-id j-9ZDMCFI38DE2 --steps Type=CUSTOM_JAR,Name="Spark Program",Jar="command-runner.jar",ActionOnFailure=CONTINUE,Args=[s3://rachaelspringboard20211009bucket/test_shell_spark_submit.sh,s3://rachaelspringboard20211009bucket/,s3://rachaelspringboard20211009bucket/output2/]
+{
+    "StepIds": [
+        "s-3BNPN6CYHIMV9"
+    ]
+}
+
+PS C:\Users\cardo\PycharmProjects\SPRINGBOARD\CAPSTONE\Scaled_Data_Pipeline> aws emr add-steps --cluster-id j-9ZDMCFI38DE2 --steps Type=CUSTOM_JAR,Name="Spark Program",Jar="command-runner.jar",ActionOnFailure=CONTINUE,Args=["spark-submit",s3://rachaelspringboard20211009bucket/scaled_prototype.py,s3://rachaelspringboard20211009bucket/,s3://rachaelspringboard20211009bucket/output2/]
+{
+    "StepIds": [
+        "s-105Z9NDJU3ENQ"
+    ]
+}
+
+PS C:\Users\cardo\PycharmProjects\SPRINGBOARD\CAPSTONE\Scaled_Data_Pipeline> aws emr put-auto-termination-policy --cluster-id j-9ZDMCFI38DE2 --auto-termination-policy IdleTimeout=60
